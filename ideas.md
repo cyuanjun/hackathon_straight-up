@@ -4,9 +4,11 @@ Generated from `challenge-statements.md` — each idea is grounded in the archet
 
 ---
 
-## TL;DR — top 5
+## TL;DR — top picks
 
-Each of these has ≥3 panel champions, a clear 5–7 step AI pipeline, SEA-specific grounding, isn't on the done-to-death list, and is demoable in a week. Since 67% of rubric score is Challenge-Solution Fit + Tech Execution, these are the structurally safest bets.
+### If the goal is hackathon score (top 5 for the panel)
+
+Each has ≥3 panel champions, a clear 5–7 step AI pipeline, SEA-specific grounding, isn't on the done-to-death list, and is demoable in a week. Since 67% of rubric score is Challenge-Solution Fit + Tech Execution, these are the structurally safest bets.
 
 1. **[Filial Proxy](#1-filial-proxy)** — A4 + D4 + E2. Bing Wen + Wanting + Sandy. Uniquely SEA (overseas diaspora + filial piety). CareShield/MediSave admin agent for overseas adult children.
 2. **[Numbers Honestly](#2-numbers-honestly)** — D6 (AIF). Janet + Hester + Wanting. Triple-champion AIF tailwind. RAG-grounded fertility + career simulator with *honest uncertainty*.
@@ -14,9 +16,21 @@ Each of these has ≥3 panel champions, a clear 5–7 step AI pipeline, SEA-spec
 4. **[Portfolio Passport](#10-portfolio-passport)** — B5 (AIF). Janet + Hester + Gabrielle. Triple-champion AIF. Replaces network/pedigree with signed real-world proof of work.
 5. **[Hawker Inventory Agent](#14-hawker-inventory-agent)** — E3. Nishith + James + SEA VCs + Desmond. Nishith-bait: real multilingual voice → demand-model → auto-ordering pipeline. Strongest non-AIF lane.
 
+### If the goal is starting a company (top 3 for the VC bloc)
+
+6 of 15 judges are VCs (Cheryl, Daryl, Malavika, Theresa, Joshua, Heng Xuan) plus Hester (angel) and James (corporate). What they reward: **SEA-first GTM, defensibility, business-model clarity, founder-market fit, durable moats, regional TAM**. What they punish: US-coastal copycats, hackathon-only defensibility, unclear monetization.
+
+1. **[Envelope](#16-envelope--agent-native-payment-rail)** — A1 + E1 + E2. Nishith (Stripe!) + Sandy + James. "Stripe for agents." Payment rails designed for agents, not retrofitted from human rails. Infrastructure moat + two-sided network effect.
+2. **[Kasih Credit](#15-kasih-credit--sea-alt-credit-agent)** — A3 + B2 (+ AIF if framed for women). James + Janet + SEA VCs + Heng Xuan. Alt-credit for SEA's 300M thin/no-file adults. Classic SEA fintech — massive TAM, regulatory moat, data flywheel.
+3. **[MigrantMate](#18-migrantmate--ofw-remittance--household-agent)** — A3 + C3 + D4. Malavika + James + Hester. Household agent for OFWs managing family finances from 2,000km away. $150B+ remittance flow, family-network effect, category-creating.
+
+### The bridge ideas (score well in both lenses)
+
+If you want hackathon-win-plus-investor-conversation in one swing, these are the overlap: **[Hawker Inventory Agent](#14-hawker-inventory-agent)**, **[Portfolio Passport](#10-portfolio-passport)**, **[Agent Stethoscope](#13-agent-stethoscope)**, **[Filial Proxy](#1-filial-proxy)**.
+
 ---
 
-## All 14 ideas
+## All 19 ideas
 
 ### 1. Filial Proxy
 
@@ -326,6 +340,145 @@ Each of these has ≥3 panel champions, a clear 5–7 step AI pipeline, SEA-spec
 
 ---
 
+## VC-friendly ideas (startup-ready)
+
+These 5 ideas are tuned for the VC bloc's lens: SEA-first GTM, defensibility, clear business model, founder-market fit, regional TAM, durable moats. They're scored slightly differently from the panel-optimised ideas above — they lead with the market wedge and include explicit BM / Moat / TAM / Founder-fit fields. Panel-champion alignment is still shown, but some of these will score mid on AIF-tailwind and high on commercial judges instead.
+
+### 15. Kasih Credit — SEA Alt-Credit Agent
+
+**Tackles:** A3 (unequal AI personalisation) + B2 (low-friction earning) — stacks to A5/B5 (AIF) if framed explicitly for women
+**For:** Delivery drivers, hawker assistants, market stall owners, domestic helpers across SG/ID/PH/VN who are credit-invisible (thin- or no-file). ~60–70% of SEA adults fit this profile.
+
+**The insight.** 300M+ SEA adults are thin-file or no-file. Traditional underwriting excludes them; BNPL lenders prey on them. The novel move: an AI agent that builds a verifiable alternative credit profile from gig-platform earnings (Grab/Gojek), e-wallet flows (PayNow/GCash/OVO), utility/rent payments, and behavioral signals — packaged as an *explainable* credit report banks can underwrite against.
+
+**AI pipeline:**
+1. User consent → pulls from gig platforms, e-wallets, telco top-ups, utility payments
+2. Feature extraction: income regularity, essential-spend ratio, stability signals
+3. Alternative credit model (LLM-augmented feature engineering + classical risk model)
+4. Explainable score card: user sees exactly which behaviors help/hurt
+5. Dispute + correction flow (agent handles via the relevant platform)
+6. Bank-facing API: underwriters pull signed, timestamped credit report
+7. Ongoing monitoring: flag lifestyle changes, auto-re-score
+
+**Panel champions:** **James** (Intl sustainability + financial inclusion at scale — his exact lens), **Janet** (AIF if framed for women — SEA women are disproportionately thin-file), Cheryl/Daryl/Malavika (SEA VC — TAM + regulatory wedge), Heng Xuan (durable moat via data accumulation).
+
+**Business model:** B2B2C — banks/lenders pay per underwriting pull (~$2–5/pull); consumer keeps the profile free.
+**Moat:** Data flywheel (more borrowers → more signals → better scores → more banks) + regulatory compliance as barrier to entry + bank-partnership exclusivity.
+**TAM:** ~300M thin/no-file SEA adults; $30B+ underserved SME+consumer credit gap (Bain/Temasek 2024).
+**Founder-market fit:** Strongest if team has lived financial-exclusion experience *or* SEA banking insider knowledge. Articulate why a US competitor can't clone this: local regulator relationships, local platform integrations, language coverage, trust.
+
+**Risk:** Bank-partnership integration isn't demo-able in a week. Mitigation: partner with one SG bank sandbox (DBS PayLah dev sandbox, UOB TMRW API), make the ingest + scoring + explanation flow real; mock the pull-to-bank step credibly.
+
+---
+
+### 16. Envelope — Agent-Native Payment Rail
+
+**Tackles:** A1 (ambient AI agent trust) + E1 (AI-native infra) + E2 (governance / auditability by default)
+**For:** Developers building consumer agents + the consumers whose agents will move money (starting with Daniel, 34, Tiong Bahru designer — see archetype #8).
+
+**The insight.** Current payment rails (Stripe, cards, PayNow) assume a human authorizes each transaction. Agents need a fundamentally different primitive: *budget envelopes* with per-category limits, per-merchant whitelists, auto-revocable scopes, anomaly freezes, and signed agent-identity receipts. Nobody has built payment infra *for* the agent era — incumbents (Stripe included) are retrofitting human rails.
+
+**AI pipeline:**
+1. User creates budget envelope: $X for category Y, merchant whitelist, time-box
+2. Agent requests spend → envelope checks policy + merchant verification
+3. Risk model flags anomalies (new merchant, amount spike, behavioral deviation)
+4. Signed transaction: receipt with agent ID, user ID, envelope ID, C2PA-style signature
+5. User-facing receipt feed (natural stack with [Receipts](#8-receipts))
+6. One-tap revocation / rollback for reversible merchants
+7. Dispute + regulator-facing audit trail
+
+**Panel champions:** **Nishith** (Stripe — this is literally his domain; multi-step non-trivial infra), **Sandy** (agent permissions + governance), James (global scale), Heng Xuan (infrastructure moat), Theresa (Antler solo-founder angle).
+
+**Business model:** Usage-based (bps on agent transactions, ~30–50 bps) + enterprise SaaS tier for platforms.
+**Moat:** Two-sided network effect (more agents accept → more merchants integrate) + compliance/regulator relationships + first-mover on the category.
+**TAM:** Category-creating. Every consumer agent that moves money globally. SEA agent-native spend projected to hit tens of $B in late-2020s.
+**Founder-market fit:** Strongest with payments-infra experience OR deep agent-systems experience. Big claim to own: "every agent will need this; today none have it."
+
+**Risk:** "Stripe for agents" is high-ambition — demo must show one real live transaction end-to-end, not a dashboard. Mitigation: pick one killer scenario (agent buys ingredients for Aunty Mui's stall via Envelope; user sees receipt + one-tap cancel live on stage).
+
+---
+
+### 17. LiveTrust — Indonesian Social Commerce Trust Agent
+
+**Tackles:** A2 (fragile authenticity) + A3 (unequal AI outcomes in consumer protection)
+**For:** Indonesian and SEA social-commerce buyers on TikTok Live / Instagram Live / Shopee Live who get scammed daily by fake sellers and counterfeit products on livestreams.
+
+**The insight.** Indonesian social commerce is $80B+ today and growing ~40% YoY. Buyers have zero trust infrastructure — they buy based on livestream energy and lose money to fake sellers. Incumbents (TikTok Shop, Shopee Live) won't fix this because their TVL depends on volume, not trust. The novel move: an AI agent that watches livestreams in real-time, verifies sellers across sessions (face consistency, voice biometrics, product provenance), surfaces an in-session trust score, and offers escrow until delivery.
+
+**AI pipeline:**
+1. Viewer opts in to a livestream (browser extension or companion app)
+2. Agent ingests video + audio in real-time
+3. Seller verification: face consistency across previous streams, voice biometric match, account-history cross-reference
+4. Product provenance: if claimed "100% original," check against brand register
+5. Trust score surfaced in-session (non-intrusive overlay)
+6. Escrow offer: buyer pays into escrow, released on delivery confirmation
+7. Post-transaction reputation update (signed review tied to verified purchase)
+
+**Panel champions:** **Malavika** (East Ventures, Indonesia — her exact lens), James (SEA scale + financial inclusion/protection), Cheryl/Daryl (SEA VC), Sandy (authenticity/provenance primitive).
+
+**Business model:** Take-rate on escrow-protected transactions (1–2%) + platform partnerships (Shopee/Lazada affiliate integrations).
+**Moat:** Reputation graph — grows more valuable the bigger it gets; incumbents won't replicate without cannibalizing their own TVL.
+**TAM:** SEA social commerce projected $200B+ by 2030; Indonesia alone is $80B today.
+**Founder-market fit:** Must include Indonesian founder or deep ID social-commerce experience. US-founded competitor is structurally disadvantaged (language, platform relationships, seller-side networks).
+
+**Risk:** Integrating with TikTok/IG without blessing is hard. Mitigation: start with Shopee Live (more open APIs) or ship as a browser extension / companion app that buyers install independently of the platform.
+
+---
+
+### 18. MigrantMate — OFW Remittance + Household Agent
+
+**Tackles:** A3 (AI personalisation equity) + C3 (fragmented communication) + D4 (caregiver burnout — OFWs are long-distance caregivers)
+**For:** Maria, 38, Filipino domestic worker in Singapore. Sends ~S$1,200/month home; also manages her kids' school fees, parents' medicine, cousin's utility bills — from her phone, across timezones, through WhatsApp threads she can't track.
+
+**The insight.** Remittance apps (GCash, Maya, Wise) treat every transfer as atomic. OFWs actually operate a *distributed household* — recurring obligations, bill payments, dispute mediation, and emotional labor from 2,000km away. The novel move: an agent that authenticates once to the family's e-wallets, pays recurring bills on their behalf, detects anomalies, and gives Maria a weekly household financial report in Tagalog.
+
+**AI pipeline:**
+1. Multi-user auth: Maria + her mother + her kids consent to shared financial oversight
+2. Ingest: family's e-wallet flows, bill SMS, utility portals, school-fee notifications
+3. Schedule recurring payments (auto-execute on approved schedule)
+4. Anomaly detection: unusual withdrawal, missed bill, new merchant
+5. Bilingual voice interface (English/Tagalog/Bahasa/Thai/Khmer)
+6. Dispute mediator: if sister "borrowed" money, agent surfaces the fact and helps Maria confront without escalating family drama
+7. Weekly household financial report → Maria's WhatsApp, in her language
+
+**Panel champions:** **Malavika** (East Ventures, SEA), **James** (financial inclusion at scale — his exact lens), **Hester** (majority of OFWs are women), Cheryl/Daryl (SEA VC), Janet (if framed as AIF — women's economic empowerment).
+
+**Business model:** Freemium (1 recipient free, family-pack paid ~$4–8/mo) + bps on managed recurring payments.
+**Moat:** Family-network effect (adding one OFW onboards 4–6 household members) + data flywheel on household financial patterns + trust-once-earned-is-sticky.
+**TAM:** 10M+ Filipino OFWs, 30M+ SEA migrant workers globally, $150B+ annual SEA remittance flow.
+**Founder-market fit:** Strongest if team has OFW family background or deep SEA migration experience. Category-creating in a massive underserved segment that American fintechs systematically ignore.
+
+**Risk:** Trust + security is existential (people's livelihoods). Mitigation: v1 is read-only (ingest + insights + alerts, no payments); v2 adds bill payment after trust is established and reputation is seeded.
+
+---
+
+### 19. ComplyAI — SG Early-Stage Compliance Agent
+
+**Tackles:** E2 (governance / auditability) inverted — *using* agents to absorb regulatory compliance work + B4 (entry-level work compressed — compliance is exactly the work AI can absorb)
+**For:** Hana, 29, solo founder building a fintech out of Antler. Spent 40 hours last month on ACRA / IRAS / CPF / MOM filings instead of product.
+
+**The insight.** SG is famously structured — which means its compliance is *automatable*. Every founder does this dance manually because it's fragmented across 5+ government portals with no unified calendar or state. Incumbents (corp-sec firms) charge $300–800/mo to do it by hand. The novel move: an agent that owns the regulatory calendar end-to-end, fetches documents, prepares filings, submits them, and maintains an audit trail for due diligence.
+
+**AI pipeline:**
+1. Company intake (UEN, structure, headcount, share cap)
+2. Regulatory calendar generation: ACRA AGM, IRAS ECI/Form C-S, CPF submissions, MOM work-pass renewals, GST
+3. Document fetch: pull financials from Xero/QuickBooks; employee data from HR system
+4. Preparation: agent drafts each filing; founder reviews
+5. Submission via each portal's API (where available) or browser automation where not
+6. Confirmation tracking + receipt storage
+7. Audit trail: signed record of every filing action for future due diligence
+
+**Panel champions:** **Theresa** (Antler — every solo founder needs this yesterday, and she's investing in solo founders), **Desmond** (ACE.SG — ecosystem viability), **Joshua Lim** (business-model clarity), Heng Xuan (scaling logic to MY/ID/VN), Nishith (multi-step pipeline with real integrations).
+
+**Business model:** B2B SaaS, ~S$80/mo/company (replacing S$300–800 corp-sec fees).
+**Moat:** Regulatory-integration depth (every new portal integration is a moat layer); reliability becomes a trust moat; once you're doing someone's filings, they don't switch.
+**TAM:** ~60K active SG private companies + ~10K new companies/year. Expand to MY / ID / VN for 5–10x multiplier.
+**Founder-market fit:** Strong with SG startup-operator or corp-sec background. Solo-founder-viable (exactly Theresa's Antler lens).
+
+**Risk:** "Boring SaaS" demo risks being a slide deck. Mitigation: live-file one real ACRA AGM during the pitch. Nothing beats a real submission on stage.
+
+---
+
 ## Stacking map
 
 Ideas that share primitives and could merge if you want one big swing:
@@ -336,12 +489,16 @@ Ideas that share primitives and could merge if you want one big swing:
 - **Portfolio Passport + Quiet Clients + Brain Gigs** — the full B-theme stack. Tacit knowledge extraction → student-SME projects → signed portfolio. Could be one coherent platform for "SEA opportunity discovery." Gabrielle + Desmond + Bing Wen + Janet (if Portfolio Passport is the anchor AIF challenge).
 - **Receipts + Authenticity Letter + Agent Stethoscope** — Sandy's full provenance / trust stack. Could be one "agent accountability OS" with consumer, HR, and infra surfaces.
 - **Hawker Inventory Agent + Next-Visit Briefing** — both are "voice-native multilingual SEA agent with real domain vocab, real pipeline, zero hardware." Different user but same primitive. Could be the Nishith-bait mega-pitch.
+- **Envelope + Receipts** — Envelope is the rail, Receipts is the UI. Together: the full consumer-facing agent-payments trust stack. Nishith + Sandy double-champion; strongest infrastructure pitch on the panel.
+- **Kasih Credit + MigrantMate** — both serve SEA's financially underserved. Kasih profiles you; MigrantMate *uses* your profile to manage your household. Together: "AI financial OS for the next 500M SEA consumers." James + Malavika + AIF possible.
+- **Envelope + Kasih Credit + MigrantMate** — the full SEA financial-inclusion trio. Category-creating, triple-VC-friendly. Could pitch as one holding-co play but likely too ambitious for hackathon week — pick one as wedge.
+- **ComplyAI + Agent Stethoscope** — both are "boring SaaS with durable moats that founders need." Theresa + Desmond + Joshua pure commercial stack; zero AIF but strong VC panel vote.
 
 ---
 
 ## Coverage check
 
-Challenges covered: A1 (Receipts), A2 (Authenticity Letter), A3 (Brain Gigs, Hawker Agent), A4 (Filial Proxy), A5 (Remix Club), B1 (Brain Gigs), B2 (Brain Gigs), B3 (Quiet Clients, Portfolio Passport), B4 (Quiet Clients), B5 (Portfolio Passport), C3 (Fair Share), C4 (Fair Share), D1 (Next-Visit Briefing), D2 (Protocol Grader), D3 (Next-Visit Briefing), D4 (Filial Proxy, Next-Visit Briefing), D5 (Predict-Then-See), D6 (Numbers Honestly), E1 (Agent Stethoscope), E2 (Filial Proxy, Receipts, Agent Stethoscope), E3 (Hawker Inventory Agent), E4 (Predict-Then-See), E5 (Remix Club).
+Challenges covered: A1 (Receipts, Envelope), A2 (Authenticity Letter, LiveTrust), A3 (Brain Gigs, Hawker Agent, Kasih Credit, LiveTrust, MigrantMate), A4 (Filial Proxy), A5 (Remix Club), B1 (Brain Gigs), B2 (Brain Gigs, Kasih Credit), B3 (Quiet Clients, Portfolio Passport), B4 (Quiet Clients, ComplyAI), B5 (Portfolio Passport), C3 (Fair Share, MigrantMate), C4 (Fair Share), D1 (Next-Visit Briefing), D2 (Protocol Grader), D3 (Next-Visit Briefing), D4 (Filial Proxy, Next-Visit Briefing, MigrantMate), D5 (Predict-Then-See), D6 (Numbers Honestly), E1 (Agent Stethoscope, Envelope), E2 (Filial Proxy, Receipts, Agent Stethoscope, Envelope, ComplyAI), E3 (Hawker Inventory Agent), E4 (Predict-Then-See), E5 (Remix Club).
 
 **Intentionally skipped:** C1 (Priority collapse) and C2 (Decision fatigue) — `challenge-statements.md` flags these as weakest-advocate zones (no dedicated champion + crowded market). Enter only with a very sharp edge, not as default hackathon play.
 
