@@ -1,409 +1,354 @@
-# Ideas — Wavesparks Challenge Exploration
+# Ideas
 
-*Generated 2026-04-18. Complements `combo-review.md` (which already scored the 5 obvious combos) by exploring **the challenges those combos under-served**: A2, A3, A4, D4, D6.*
-
----
-
-## Scope of this doc
-
-`combo-review.md` already analyzed and ranked five combos:
-
-| Rank | Combo | Score |
-|---|---|---|
-| #1 | Women-in-AI agentic playground (A5+B5+C4+D6+E5) | 39/45 |
-| #2 | Coordination OS (C1+C2+C3+C4+A1) | 36/45 |
-| #3 | Career Launchpad (B1–B5) | 35/45 |
-| #4 | Trust Layer for Agents (A1+E2+E4+A2) | 34/45 |
-| #5 | Longevity for Young Asians (D1+D2+D3+D5) | 33/45 |
-
-Those five cover themes B, C, E densely, and touch A1/A5/D1/D2/D3/D5. **Untouched whitespace**: A2 (authenticity), A3 (AI personalization inequality), A4 (ageing/independent living), D4 (caregiver burnout), D6 (fertility-career).
-
-This doc proposes **6 new ideas** targeted at those gaps, each with a market scan and a defensible edge. Ranked at the end against the same 5-criterion rubric.
+Generated from `challenge-statements.md` — each idea is grounded in the archetypes, routes around the "done-to-death" defaults, and maps to real panel champions. Each card is self-contained so you can pull any one into a separate terminal for a deep-dive.
 
 ---
 
-## Idea 1 — Second Shift: Elder-care co-pilot for adult children
+## TL;DR — top 5
 
-### Challenges (A4 + D4 + C4)
-- **A4** Ageing, isolation, independent living
-- **D4** Hidden caregiver burnout
-- **C4** Invisible cognitive labor *(the "sandwich generation" lens)*
+Each of these has ≥3 panel champions, a clear 5–7 step AI pipeline, SEA-specific grounding, isn't on the done-to-death list, and is demoable in a week. Since 67% of rubric score is Challenge-Solution Fit + Tech Execution, these are the structurally safest bets.
 
-### The unifying insight
-Every existing elder-tech product targets **the senior** (ElliQ, Meela, inTouch, SeniorTalk). None seriously target **the adult child doing the coordinating** — tracking doctor appointments, medication, groceries, confusion episodes, cross-sibling logistics. That coordination burden is the exact C4 invisible-labor pattern, one generation up, and it silently lands on one adult child (usually a daughter).
-
-### Proposed solution
-A co-pilot that sits in the **adult child's** pocket:
-1. Parent has a simple voice endpoint (phone call, WhatsApp number, or existing ElliQ-like device) they talk to daily.
-2. The co-pilot extracts: "Mum said her knee hurt again, she skipped lunch, the aircon repair guy hasn't come." → structured log.
-3. Siblings share one dashboard: who checked in, what's pending, whose turn it is for the next doctor visit.
-4. Escalation layer: anomaly detection on speech pattern, missed meds, missed calls.
-
-### Target user
-**Adult children (25–45) in SEA caring for parents 65+ who still live independently.** Singapore is a perfect wedge — fastest-ageing society in SE Asia, strong filial expectations, smartphone-saturated.
-
-### Hackathon-scoped MVP
-- WhatsApp bot for the parent (no new hardware, no install).
-- Claude extracts structured events + flags anomalies.
-- Sibling-shared dashboard (Next.js) with a shared task board and a weekly "load per sibling" chart.
-- One scripted escalation: parent mentions chest pain → dashboard red + SMS to all siblings.
-
-### Tech depth
-- Multi-step agent: transcript → entity extraction → health/logistics classifier → anomaly detector → routing.
-- Real WhatsApp Business API integration (not a wrapper).
-- Memory layer — the agent remembers the parent's baseline over time.
-
-### Competitive landscape
-
-| Product | What they do | Gap we fill |
-|---|---|---|
-| **ElliQ** | $1.5k robot for senior's home; 95% loneliness reduction per NYSOFA | Targets senior, not caregiver; hardware dependency |
-| **Meela** | Voice AI companion for older adults | Senior-facing; no sibling coordination |
-| **inTouch** | Warm AI phone calls to parents | One-way; doesn't produce a coordination ledger |
-| **SeniorTalk / QuikTok** | Chatbot companionship | No family-ops surface |
-| **Papa** (US) | On-demand companions for seniors | Human labor, not AI; no SEA presence |
-| **CareYaya** | Caregiver marketplace + AI guide | US-only; marketplace play, not coordination |
-
-### Our edge
-- **Caregiver-first positioning** — nobody frames the product around the invisible-labor gap between siblings.
-- **WhatsApp-native for the senior** — no hardware, no app install, zero onboarding friction (the competitor moat for ElliQ is bought with $1.5k hardware we avoid).
-- **SEA demographic wedge** — Asian multi-sibling coordination is culturally more load-bearing than the Western "one primary caregiver" assumption.
-- **Coordination-labor dashboard** (shared DNA with Coordination OS) — reuse of the same primitive shows judges a coherent point of view.
-
-### Risks
-- Liability around health escalation — frame as "communication tool," not medical.
-- Privacy around recording a parent — consent UX must be tight.
+1. **[Filial Proxy](#1-filial-proxy)** — A4 + D4 + E2. Bing Wen + Wanting + Sandy. Uniquely SEA (overseas diaspora + filial piety). CareShield/MediSave admin agent for overseas adult children.
+2. **[Numbers Honestly](#2-numbers-honestly)** — D6 (AIF). Janet + Hester + Wanting. Triple-champion AIF tailwind. RAG-grounded fertility + career simulator with *honest uncertainty*.
+3. **[Fair Share Agent](#3-fair-share-agent)** — C4 (AIF) + C3. Janet + Hester + Gabrielle. Absorbs coordination labor, doesn't just measure it.
+4. **[Portfolio Passport](#10-portfolio-passport)** — B5 (AIF). Janet + Hester + Gabrielle. Triple-champion AIF. Replaces network/pedigree with signed real-world proof of work.
+5. **[Hawker Inventory Agent](#14-hawker-inventory-agent)** — E3. Nishith + James + SEA VCs + Desmond. Nishith-bait: real multilingual voice → demand-model → auto-ordering pipeline. Strongest non-AIF lane.
 
 ---
 
-## Idea 2 — Receipts: a consumer activity feed for personal AI agents
+## All 14 ideas
 
-### Challenges (A1 + E2 + A2)
-- **A1** Ambient AI agents and trust
-- **E2** Governance, permissions, auditability
-- **A2** Fragile authenticity — signs outbound agent actions with provenance
+### 1. Filial Proxy
 
-### The unifying insight
-`combo-review.md` covered the **developer-facing** trust layer ("Clerk for agents"). The consumer version is different and under-explored: most people will soon have 3–5 agents acting on their behalf (inbox agent, shopping agent, calendar agent), with **no single feed** of what any of them did. It's the "credit-card statement for AI" — but for all your agents, not one.
+**Tackles:** A4 (ageing, independent living) + D4 (caregiver burnout) + E2 (governance / auditability)
+**For:** Mdm Lim, 78, Toa Payoh 4-room, widow — *and* her daughter in London who can't manage her CareShield claims, polyclinic appointments, and MediSave top-ups across timezones.
 
-### Proposed solution
-A consumer app / browser extension that:
-1. Installs shims into the user's major agents (ChatGPT connectors, Claude, Gemini in Gmail, any MCP-aware agent).
-2. Renders a single **activity feed**: "Your inbox agent sent 4 replies, your calendar agent booked 1 meeting, your shopping agent added 2 items to cart."
-3. Every action is revertible (where the underlying API supports it) and one-tap-reportable.
-4. Anomaly layer: "Your shopping agent spent 3× your 30-day average — approve?"
+**The insight.** Every existing eldercare product targets the elderly person. The real caregiver is the adult child overseas, drowning in parent-admin they can't physically do from abroad. The SEA specificity is filial piety as an obligation + Singapore's diasporic reality (adult children in Shanghai / London / NY). Not a fall-detector — a *proxy* that does the admin.
 
-### Target user
-**Early-adopter consumers** (US + SG, 25–40, already use 2+ AI tools daily). Secondary: parents worried about teen AI usage.
+**AI pipeline:**
+1. **Ingest** — voice calls from Mdm Lim (Mandarin/Hokkien), SMS from CareShield, emails from polyclinic
+2. **Classify** — admin task / medical update / urgent / social chit-chat
+3. **Plan** — what action? (file claim / book appointment / top up MediSave / call pharmacy / escalate)
+4. **Execute** — tool-use against CareShield portal, HealthHub, polyclinic booking API, pharmacy phone tree
+5. **Receipt log** — every action written to an auditable ledger the adult child can scrub
+6. **Escalation** — ambiguity or high-stakes action pings adult child for approval
+7. **Weekly digest** — summary to daughter in London: what happened, what's next, what needs her
 
-### Hackathon-scoped MVP
-- Proxy + dashboard around **one** agent (Claude with Gmail + Calendar MCP).
-- Activity feed with human-readable "why this happened."
-- Scripted anomaly demo: agent tries to send a mass email → blocked with reason.
+**Panel champions:** Bing Wen (CPF/ageing + CareShield), Wanting (public-health pragmatism), Sandy (agent permissions + audit). Three strong, plus James for scale.
 
-### Tech depth
-- Real MCP interception layer.
-- Policy DSL with LLM-assisted anomaly classification (not just JSON rules).
-- Tamper-evident ledger (hash-chained log).
-
-### Competitive landscape
-
-| Product | What they do | Gap we fill |
-|---|---|---|
-| **Guardrails AI / NeMo Guardrails** | Dev-facing policy engines | Not consumer; no activity feed |
-| **LangSmith / Langfuse** | Agent tracing for devs | Dev-only; engineering UX |
-| **Anthropic Claude Audit API** | Native logging | Per-provider; no cross-agent view |
-| **C2PA / Content Credentials** (Pixel 10, Leica M11-P) | Signs captured content | Content-focused, not action-focused |
-| **Apple Intelligence "Private Cloud Compute"** | Trust via architecture | No user-facing log |
-
-### Our edge
-- **Cross-agent aggregation** is the primitive nobody ships. Every vendor has their own log; no neutral feed across them.
-- **Anomaly-first UX** — "flag 10 weird things" beats "read 300 logs."
-- **Consumer framing** gets around the infra-tool demo trap (judges see a product, not a middleware config).
-- Plugs into the **C2PA moment** (Pixel 10 ships content credentials by default in 2026) — extend provenance from content to actions.
-
-### Risks
-- Demand is early; consumer agents aren't yet ubiquitous.
-- Real integration with closed agents (ChatGPT) is limited to what the provider exposes.
-- Originality is strong (5/5 in combo-review's #4); Fit is the weak link — tighten the user definition.
+**Risk:** Real CareShield/HealthHub APIs aren't integratable in a week — demo must mock them. Mitigation: make *one* integration real (e.g., actual polyclinic appointment via HealthHub test env, or a real phone call to a pharmacy IVR using a voice model); mock the rest but show the architecture credibly.
 
 ---
 
-## Idea 3 — Equal AI: a tutor that matches elite prompting for public-school students
+### 2. Numbers Honestly
 
-### Challenges (A3 + D5 + B3)
-- **A3** Unequal outcomes from AI personalization
-- **D5** Health literacy starts too late *(extends to life-skill literacy)*
-- **B3** Weak connection between learning and real work
+**Tackles:** D6 (fertility vs career, AIF) + D5 (health literacy) + B5 (opportunity access, AIF)
+**For:** Charmaine, 33, senior associate at a SG law firm, partner track in 3 years, IVF ideally this year — nobody has modelled the trade-off honestly.
 
-### The unifying insight
-The AI-tutor market has converged on **Khanmigo, MagicSchool, Khan Academy with GPT-4o, Alpha School**. All assume a student who can articulate what they want, has home broadband, and is coached by an engaged adult. **1 in 5 low-income families still lack reliable home broadband** (2026). The equity gap isn't *access to ChatGPT* — it's that *using it well is a prompting skill already stratified by class.* An AI tutor that works over SMS / low-bandwidth and **asks the student the right questions** (so bad prompts never become bad outcomes) closes that gap.
+**The insight.** Existing apps are fertility *trackers* (Flo, Clue). Existing advice is motivational platitudes. What Charmaine needs is a *scenario simulator*: "If you start IVF at 34 vs 37, here's the fertility success-rate delta from peer-reviewed data, here's the partner-track outcome distribution, here's your CPF trajectory either way — with honest uncertainty bounds."
 
-### Proposed solution
-A tutor that:
-1. Works on **SMS / low-bandwidth web** (no app, no login hell).
-2. Curriculum-pinned — agrees with the student's actual Singapore / SEA syllabus, not a generic "help me with math."
-3. Active-questioning agent — the student never has to prompt well; the tutor probes to find the real confusion.
-4. **Caregiver view** (in Singapore, often grandparents) — weekly plain-text SMS summary of what the child worked on.
+**AI pipeline:**
+1. **Intake** — guided form: age, career track, firm, relationship status, health markers, financial state
+2. **Retrieve (RAG)** — peer-reviewed fertility age-curve literature + SG firm-leave policies + career-pause meta-analyses + CPF/CareShield/childcare-subsidy rules
+3. **Simulate** — Monte Carlo over 3–5 named pathways (start IVF now / defer 2yr / defer 4yr / forego)
+4. **Score** — per-pathway: fertility success-rate distribution, career outcome distribution, financial outcome (incl. CPF projection)
+5. **Narrate** — LLM composes pathway descriptions *with uncertainty ranges visible*; no single-number claims
+6. **Compare** — side-by-side, honest about confidence intervals
+7. **Save / share** — export to partner, revisit quarterly as inputs change
 
-### Target user
-Lower-income secondary students in SG/MY/ID on national curricula, grades 7–10.
+**Panel champions:** Janet (AIF sponsor), Hester, Wanting. **Triple-champion + AIF tailwind** — structurally highest-scoring on this panel.
 
-### Hackathon-scoped MVP
-- Twilio SMS endpoint.
-- RAG over one subject's syllabus (e.g. Sec 2 Math, MOE).
-- Socratic-prompting agent (multi-step — identify misconception, not "give answer").
-- Caregiver SMS summary (weekly cron).
-
-### Tech depth
-- Real multi-step: misconception classifier → curriculum retriever → Socratic step → outcome logger.
-- SMS is technically non-trivial (rate limits, thread state, short message design).
-- Evaluation loop — grade the *pedagogy*, not the answer.
-
-### Competitive landscape
-
-| Product | What they do | Gap we fill |
-|---|---|---|
-| **Khanmigo** | GPT-4-based tutor in Khan Academy | US-curriculum; requires broadband + account; English-first |
-| **MagicSchool.ai** | Teacher-side AI | School-system sale, not student-direct |
-| **Alpha School** | AI-tutor private school, $40k/yr | Elite pricing; proves the ceiling |
-| **Duolingo Max** | AI language tutor | Single-subject; subscription |
-| **Cikgu.AI / Ruangguru (ID)** | SEA edtech with AI | Android app + data plan required; no curriculum-pinned Socratic mode |
-| **UNICEF Learning Passport** | Offline low-bandwidth learning | Content, not live tutoring |
-
-### Our edge
-- **SMS-first wins the last-mile equity wedge** — every competitor assumes broadband.
-- **Socratic-by-default** turns "prompt engineering literacy" from a prerequisite into a non-issue.
-- **Curriculum-pinned** beats generic ChatGPT for trust with parents and teachers.
-- **Caregiver loop** (grandparent gets an SMS) is a culturally specific SEA hook that unlocks adoption.
-
-### Risks
-- SMS unit economics are rough at scale (hackathon-fine).
-- Needs a school partner for credibility; cold outreach in remote week is hard but doable.
-- Tech (3/5 risk) — push to 4+ by making the misconception classifier a real thing, not "Claude reads answer."
+**Risk:** (a) Wanting will torch hallucinated rates — RAG sources must be real, citations visible. (b) Emotional tone matters. Mitigation: ship with 3 real peer-reviewed sources per claim; never a single number, always a range.
 
 ---
 
-## Idea 4 — Fair Share: a mental-load redistribution app for student households
+### 3. Fair Share Agent
 
-### Challenges (C4 standalone + C2 + A3)
-- **C4** Invisible cognitive labor
-- **C2** Decision fatigue from overlapping responsibilities
-- **A3** Unequal outcomes *(the poorer the household, the less mental-load slack)*
+**Tackles:** C4 (invisible cognitive labor, AIF) + C3 (fragmented communication)
+**For:** Siti, 20, NTU class rep. Carries the coordination load for 4 male teammates who ride free.
 
-### The unifying insight
-There's a crop of 2026 household-mental-load apps (**Dame, Tody FairShare, MOLO, FairChore, Ohai.ai, Maple, Persist**) — all targeting **married couples with children**. None target the **pre-household** version of the problem: student flats, hostels, young adult roommates. That population is larger, easier to reach (campus), and forms the habits that show up in later households. If this app wins in Year-3 undergrad flats, it inherits the household market in 10 years.
+**The insight.** Every "invisible labor" product measures the gap and makes Siti the nag with new data. That's the done-to-death trap. The novel move: the agent *absorbs the coordination labor itself* — drafts the nudges, chases non-responders, builds status updates, handles the RSVP Tetris — so Siti stops being the chaser. Measurement is optional and private.
 
-### Proposed solution
-A roommate/housemate coordination app that:
-1. Auto-generates the "invisible task list" from a 5-minute intake (who shops, takes out trash, handles landlord, manages group chat logistics).
-2. **Load-per-person dashboard** with weekly balance.
-3. **Trade market** — "I'll handle the WiFi issue if you cover bins this week." Claude mediates.
-4. One agent-run: "nag-on-your-behalf" — the app sends the reminder so the coordinator doesn't have to.
+**AI pipeline:**
+1. **Ingest** — team chat history via Telegram / WhatsApp / Slack MCP connectors
+2. **Extract** — coordination acts: reminders, follow-ups, chasers, emotional-management moves
+3. **Attribute** — graph: who does the coordination work today
+4. **Absorb** — agent takes over the reminders / follow-ups / status summaries
+5. **Redistribute** — drafts nudges to non-responders in that person's tone, not Siti's
+6. **Report** — weekly private dashboard for Siti; optional team-shared dashboard
+7. **Hand-back** — Siti can un-assign any coordination task, agent holds the line
 
-### Target user
-Uni-age roommate groups in SEA (hostels, off-campus flats). Pitch-pivot secondary: couples pre-children.
+**Panel champions:** Janet (AIF sponsor), Hester, Gabrielle. Triple-champion AIF.
 
-### Hackathon-scoped MVP
-- WhatsApp group bot (join group → infer tasks from chat history → surface load chart).
-- Consent-gated chat ingestion; structured task extraction with Claude.
-- Weekly "who did what" digest.
-
-### Tech depth
-- Real chat-log parsing + role attribution (non-trivial NLP).
-- Load-quantification rubric (time × cognitive weight × recurrence).
-- Multi-agent: extractor → classifier → mediator → nag-drafter.
-
-### Competitive landscape
-
-| Product | What they do | Gap we fill |
-|---|---|---|
-| **Dame** | Household mental-load visibility | Couples-with-kids; paid; not chat-native |
-| **Tody + FairShare 2025** | Chore fairness via points | Couples; requires app install per user |
-| **MOLO** | AI assistant for the "mother load" | Parenting-framed; excludes students |
-| **FairChore** | Points-based chore tracking | Same space; paid; not SEA-aware |
-| **Ohai.ai** | Family ops, Sheila Marcelo-backed | Well-funded adult market; not student |
-| **Maple** | Mental-load calculator quiz | Assessment only; no ongoing tool |
-
-### Our edge
-- **Student-roommate positioning** is white space — every competitor chose married-with-kids.
-- **WhatsApp-native** — zero-install matters for students; competitors ship apps.
-- **Consent-gated chat ingestion** is the "unfair advantage" primitive — once you have weeks of group-chat history, your task graph is better than a quiz-based competitor can ever build.
-- Shares the **invisible-labor framing** with the team's existing Coordination OS direction — two products, one worldview.
-
-### Risks
-- Chat ingestion is a privacy minefield. Consent UX has to be the core of the demo, not a footnote.
-- WhatsApp Business API has gotchas for bots in groups; test early.
-- Overlap with C4 framing in Coordination OS means team needs to pick one.
+**Risk:** Public load-tracking shames teammates. Mitigation: dashboard private by default; absorption is the product, measurement is side-feature.
 
 ---
 
-## Idea 5 — Capability Card: verifiable proof-of-work, without the marketplace
+### 4. Remix Club for Teen Girls
 
-### Challenges (B1 + B3 + B5 distilled)
-- **B1** Slow conversion from skills to income
-- **B3** Weak link between learning and real work
-- **B5** Opportunity access gated by pedigree
+**Tackles:** A5 (AI adoption gap, AIF) + E5 (prompt user → architect, AIF)
+**For:** Aisyah, 15, IP school Sec 3. Uses ChatGPT for homework but never builds. Mother thinks AI is "not for girls."
 
-### The unifying insight
-Combo #3 (Career Launchpad) bundled all of B into one product and paid for it with **two-sided-marketplace cold-start risk**. The pivot: drop the marketplace, ship just the **primitive** — a verifiable "capability card" that works like a GitHub contribution graph but across any skill (design, writing, code, ops). Monetize the primitive, let marketplaces embed it. 2026 hiring context: "skills-based hiring" is replacing degrees, verifiable credentials (Microsoft, Velocity Network, Indicio) are launching, but all are enterprise-sold. Consumer-first capability cards are open.
+**The insight.** Coding bootcamps with female branding fail because they frame AI as STEM. Aisyah doesn't need to learn to code — she needs to build agents for things she *already* cares about (K-pop scheduling, fandom digests, friend-group logistics, event coordination). The product is a Discord/Telegram-native visual agent scaffolder where teens remix each other's agents. Fork culture, not curriculum.
 
-### Proposed solution
-A tool that:
-1. Ingests any piece of work (PR, Figma file, doc, Loom, deliverable).
-2. Multi-agent review grades it on a rubric *appropriate to the claimed skill*.
-3. Emits a **signed, replayable card** showing the work + the reviewing agents' reasoning + time spent.
-4. Portfolio is a clean public URL. Recruiters can filter by signal.
+**AI pipeline:**
+1. **Intake** — teen types/voices what she wants in natural language
+2. **Scaffold** — LLM emits a starter agent (prompt + tool graph) in readable visual format
+3. **Remix** — she edits nodes + tool calls via drag UI; agent schema visible
+4. **Sandbox** — run agent in isolated env, see intermediate reasoning
+5. **Fork** — share agent to friend; friend edits and forks back
+6. **Compare** — "your agent vs mine — why did mine do better?"
+7. **Graduate** — as she gets comfortable, expose raw schema / MCP tool definitions
 
-### Target user
-SEA final-year students + career-switchers who want proof beyond a resume. Single-vertical demo (e.g. frontend dev).
+**Panel champions:** Janet (AIF sponsor), Hester, Gabrielle. Triple-champion AIF. Sandy secondary (AI education policy).
 
-### Hackathon-scoped MVP
-- Submit a GitHub repo URL → 3-agent review (code review, UX review, architecture review) → rubric-graded card.
-- Signed URL with process recording.
-- Lightweight search across cards.
-
-### Tech depth
-- Multi-agent grading pipeline with explicit rubric per skill.
-- Hash-chained signing (cheap, credible).
-- Embeddings search over the cards.
-
-### Competitive landscape
-
-| Product | What they do | Gap we fill |
-|---|---|---|
-| **GitHub** | Code portfolio | Code-only; no reasoning trace; no rubric |
-| **Mercor** | AI-interview + talent marketplace | Marketplace gatekeeper; one-shot test, not portfolio |
-| **Pallet / Contra / Upwork** | Marketplaces with work history | Not portable; marketplace-locked |
-| **Microsoft Credentials / Velocity Network** | Verifiable enterprise credentials | Not consumer-first; credentialing != capability |
-| **RepVue / LevelsFYI** | Employer signal | Not candidate-side proof |
-| **Read.cv** | Nice resume pages | Not *verified*; no grading primitive |
-
-### Our edge
-- **Primitive over marketplace** — avoids cold-start entirely; let marketplaces adopt the card.
-- **Multi-agent review is an actual system** — unlike "AI scored this," three reasoning agents with disagreement is a defensible tech play.
-- **Signed + replayable** — the card itself is a C2PA-style artifact; judges can literally inspect it.
-- Piggybacks on the 2026 **"portfolio resume"** trend — aligned with Microsoft, Google Skill Badges, Velocity Network momentum, but consumer-first.
-
-### Risks
-- "AI graded" raises trust questions — own this by showing the disagreement trace.
-- Overlaps Career Launchpad; decision is whether to ship the primitive alone or wrap it in a marketplace demo.
+**Risk:** Minors + generative AI + DMs = safeguarding risk. Mitigation: moderated sandbox; no open DMs; fork is the social primitive, not chat.
 
 ---
 
-## Idea 6 — Life Compass: data-driven long-term planning for young women (without the fear)
+### 5. Next-Visit Briefing
 
-### Challenges (D6 + D5 + A3)
-- **D6** Fertility window vs career acceleration
-- **D5** Health literacy starts too late
-- **A3** Unequal outcomes from AI personalization *(elite fertility concierge vs nothing)*
+**Tackles:** D1 (preventive health accessible) + D3 (Asian-context fit) + D4 (caregiver version)
+**For:** Uncle Tan, 47, hawker at Old Airport Road. 14h days, BMI 29, pre-diabetic. Polyclinic told him to "eat less rice." He doesn't know where to start.
 
-### The unifying insight
-Fertility tech in 2026 (Ovia, Clue, Premom, Flo, Babytree) is split between **cycle trackers** and **IVF concierges**. Nothing exists for a 24-year-old woman asking: "If I want 2 kids, a PhD, and a VP title, what order actually works, and what are my realistic windows?" The decision is currently made under fear-based narratives ("freeze eggs by 30!") or pure social inheritance. Empowering data + scenario simulation is whitespace, and it aligns exactly with the D6 challenge framing ("realistic, empowering data — without fear-based narratives").
+**The insight.** Uncle Tan has *already been to the polyclinic*. He got generic advice because the doctor had 2 minutes and no context. What's missing is the bridge between visits — daily micro-adjustments that respect his real constraints, and a *briefing for his next visit* that turns those 2 minutes from "eat less rice" into a data-rich conversation.
 
-### Proposed solution
-A **life-scenario simulator**:
-1. Onboarding captures goals (career, kids, health, geographic) + current state (age, income trajectory, heritage/genetics priors).
-2. Simulator runs 5 life paths: "career-first," "family-first," "parallel," "freeze + accelerate," "pivot at 30."
-3. Each path shows realistic probability bands (fertility likelihood by age from real cohort data, not single-number panic stats) + financial trajectory + career impact.
-4. **No recommendation.** The tool helps her see, not decide.
+**AI pipeline:**
+1. **Ingest** — polyclinic discharge note (OCR + structured extract), patient voice diary (Mandarin/Hokkien/English), optional meal photos
+2. **Classify** — food against an Asian-context nutrient/GI DB (not MyFitnessPal's Western baseline)
+3. **Recommend** — tomorrow's micro-adjustment ("half-portion rice at breakfast, kangkong on the side")
+4. **Log** — longitudinal patient record, 7-day adherence
+5. **Compose** — next-visit briefing PDF/QR: "patient reports X, ate Y most days, adherence ~70%, symptoms Z"
+6. **Hand-off** — patient shows QR to GP at next visit; GP sees real data
+7. **Loop** — after visit, ingest updated note, repeat
 
-### Target user
-Women 22–32 in SEA who are career-ambitious and quietly anxious about timing, but turned off by IVF-marketing-style content.
+**Panel champions:** Wanting (NHG pipeline — this is exactly her rubric), Bing Wen (if tied to MediSave / CHAS), James (SEA scale).
 
-### Hackathon-scoped MVP
-- 10-question intake.
-- Simulation engine: pre-built cohort curves (fertility by age, income growth by career-track, childcare cost tables) + Monte Carlo.
-- Narrative rendering via Claude ("here's what path 3 looks like month-by-month").
-- One "smallest nudge" output: "if you did X this year, path 3 becomes 2× more likely."
-
-### Tech depth
-- Real cohort data ingestion.
-- Monte Carlo simulator (not an LLM doing stats badly).
-- Narrative agent layered on top.
-- *Not* a wrapper — the simulator is the product.
-
-### Competitive landscape
-
-| Product | What they do | Gap we fill |
-|---|---|---|
-| **Ovia / Clue / Flo / Premom** | Cycle + fertility tracking | Present-tense; no life-scenario layer |
-| **Modern Fertility** | At-home hormone testing | Medical data; no planning |
-| **Kindbody / Extend Fertility** | Egg-freezing concierge | Elite pricing; sales funnel |
-| **Origin (Bumble's)** | Wellness + fertility coach | Content-heavy; not simulation |
-| **Hello Alma / Allara** | Women's health concierge | Care navigation, not life modelling |
-| **Financial planning apps (Empower, YNAB)** | Money simulation | No biology layer |
-
-### Our edge
-- **Scenario-simulator primitive** — not another tracker, not another concierge. The category of "long-horizon life simulator" is genuinely empty for this user.
-- **Empowerment framing is mandated by the challenge itself** (D6 explicitly says "without fear-based narratives") — judges will reward it.
-- **AIF-sponsored challenge** — the Asia Institute for Foresight judges will recognize the exact framing.
-- **Asian cohort data** — Western fertility data doesn't transfer cleanly (aligns with D3). Using SEA-specific curves is a moat.
-
-### Risks
-- Medical-claim liability — must frame as "planning tool," not advice.
-- Sensitive topic — UX tone is the whole product.
-- Overlap with Women-in-AI combo's D6 template — if the team is also building combo #1, this collapses into it.
+**Risk:** Wanting will destroy any whiff of "AI doctor." Frame strictly as patient translator + clinician decision support — never diagnosis. Human-in-the-loop, visible uncertainty, disclaimers.
 
 ---
 
-# Ranking — new ideas against the rubric
+### 6. Brain Gigs
 
-Same weights as `combo-review.md`: Fit ×3, Tech ×3, UX ×1, Originality ×1, Demand ×1. Max 45.
+**Tackles:** B2 (low-friction earning) + B1 (skills → income) + A3 (unequal AI personalisation)
+**For:** Fariz, 19, NITEC grad doing food delivery while studying. Wants S$500/mo using his brain.
 
-| Rank | Idea | Fit (×3) | Tech (×3) | UX | Orig | Demand | **Total** |
-|---|---|---|---|---|---|---|---|
-| **#1** | Second Shift (elder-care co-pilot) | 5 | 4 | 4 | 4 | 4 | **39** |
-| **#2** | Capability Card | 4 | 4 | 4 | 4 | 4 | **36** |
-| **#3** | Fair Share (student households) | 4 | 4 | 4 | 3 | 5 | **36** |
-| **#4** | Life Compass | 4 | 4 | 4 | 5 | 3 | **36** |
-| **#5** | Equal AI (SMS tutor) | 4 | 3 | 3 | 4 | 4 | **31** |
-| **#6** | Receipts (consumer agent feed) | 3 | 5 | 3 | 5 | 2 | **31** |
+**The insight.** Gig platforms assume Fariz has a resume-able "skill." He doesn't. But he has *tacit* knowledge — delivery geography, Malay-English translation, food-culture fluency of specific neighborhoods. The novel move: an AI agent extracts tacit knowledge and productizes it into micro-services that pay today — no resume, no interview.
 
-### How the new ideas compare to the combo-review top 5
-- **Second Shift at 39 ties combo #1 (Women-in-AI tight anchor)** and beats combo #2 (Coordination OS, 36). It's the strongest whitespace pick.
-- **Capability Card / Fair Share / Life Compass at 36** match Coordination OS — viable alternates if the team is split.
-- **Receipts at 31** is dominated by combo #4 Trust Layer — skip unless the team wants the consumer wedge specifically.
-- **Equal AI at 31** is lower, but rubric undersells it; social-impact judges may score Fit/Demand higher than the weights suggest.
+**AI pipeline:**
+1. **Interview** — 5-min voice conversation: what do you know that others don't?
+2. **Extract** — tacit knowledge → listable services ("Tampines local-food tour, voice chat, S$15" / "Malay menu translation, S$20/menu")
+3. **Price** — benchmark against Carousell / local marketplaces
+4. **List** — auto-publish to Carousell / FB Marketplace with optimized copy
+5. **Mediate** — handle inbound inquiries in his tone, book confirmed orders
+6. **Execute** — coach him through delivery (first 3 times)
+7. **Pay + portfolio** — PayNow receipt, growing proof-of-work for higher-value gigs
 
----
+**Panel champions:** Gabrielle (student / early career), Bing Wen (WIS / low-income equity), Desmond (SG ecosystem viability).
 
-# Recommendations for remote week
-
-1. **Don't pick from this doc in isolation.** Compare head-to-head with the 5 combos in `combo-review.md`. The team's current direction (Coordination OS → StraightUp in `coordination-OS/`) scores 36; Second Shift at 39 is the only new idea that clearly beats it.
-2. **If the team is looking for a pivot that reuses the Coordination OS worldview**: **Second Shift** is the answer — same invisible-labor framing, different user (adult child caring for parent), softer market (ageing is accelerating in SEA, fewer incumbents than productivity tools).
-3. **Validation scripts to write this week** (pick the idea first, then):
-   - Second Shift: 8 interviews with 25–45 yo with a parent 65+ in SG/MY; ask about sibling coordination, not tech.
-   - Fair Share: 10 student-flat interviews; request access to the group chat for 1 week.
-   - Capability Card: 10 career-switchers who finished a course; ask what proof they wish they had.
-   - Life Compass: 10 women 22–32; ask *what scenarios they've run in their head* — the tool builds the one they already started.
-4. **Tech-depth check before day 1.** For any idea scoring Tech 4, write out the 5–7 pipeline steps explicitly. If any step is "Claude does it," redesign that step.
+**Risk:** Trust/fraud on first transaction. Mitigation: capped first-gig value (S$10 trial), AI-mediated dispute resolution, PayNow escrow.
 
 ---
 
-# Sources
+### 7. Predict-Then-See
 
-- [The State of Content Authenticity in 2026 — Content Authenticity Initiative](https://contentauthenticity.org/blog/the-state-of-content-authenticity-in-2026)
-- [C2PA Adoption in 2026 — SoftwareSeni](https://www.softwareseni.com/c2pa-adoption-in-2026-hardware-platforms-and-verification-reality/)
-- [ElliQ Companion Robot](https://elliq.com/)
-- [Meela AI Companion](https://www.meela.ai/)
-- [inTouch Family](https://intouch.family/en)
-- [CareYaya AI for Caregivers Guide 2026](https://www.careyaya.org/resources/blog/ai-for-caregivers)
-- [Washington Post — Abi, AI-powered robot companion for senior care (2026-04-09)](https://www.washingtonpost.com/opinions/2026/04/09/ai-robot-senior-care-abi/)
-- [AI Tutoring Equity Gap — Valere](https://www.valere.io/ai-tutoring-equity-gap/)
-- [Harvard ALI — Generative AI and the Achievement Gap](https://www.sir.advancedleadership.harvard.edu/articles/harnessing-power-generative-ai-close-achievement-gap)
-- [OECD Digital Education Outlook 2026 discussion — Gray DI](https://www.graydi.us/blog/gray-insights/why-your-ai-tutor-might-be-widening-the-achievement-gap)
-- [Dame — Household mental-load app](https://dame-app.damedigital.ca/blog/best-household-management-apps-2026)
-- [MOLO app](https://www.moloapp.io)
-- [Ohai.ai — Mental load checklist](https://www.ohai.ai/blog/mental-load-checklist/)
-- [Maple — Measuring the mental load](https://www.growmaple.com/blog-posts/what-is-the-mental-load-and-how-to-actually-measure-it)
-- [FairChore](https://www.fairchore.com/en/blog/mental-health-2026-sharing-chores-home)
-- [Microsoft Credentials — verified skills 2026](https://techcommunity.microsoft.com/blog/skills-hub-blog/verified-skills-real-impact-microsoft-credentials-help-you-get-ai-ready/4137356)
-- [Velocity Network — Verifiable credentials in AI hiring](https://www.velocitynetwork.foundation/verifiable-credentials-trust-and-truth-in-an-ai-enabled-talent-acquisition-market)
-- [Indicio — Why verifiable credentials will power AI 2026](https://indicio.tech/blog/why-verifiable-credentials-will-power-ai-in-2026/)
-- [Converge — "Portfolio resume" trend 2026](https://www.convergeresources.com/the-portfolio-resume-why-proof-of-work-trumps-the-cv-in-2026/)
-- [Top 10 fertility apps 2026](https://www.top10.com/fertility-apps)
-- [iMedia — 2026 Recommended fertility apps](https://min.news/en/news/69c7b0fdac2c15d6abd8d286d2159b56.html)
-- [Ovia Health](https://www.oviahealth.com/)
-- [Clue](https://helloclue.com/)
-- [Fertility apps & holistic health tracking — PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7940095/)
+**Tackles:** E4 (preserving human agency) + D5 (health literacy)
+**For:** Ethan, 16, Sec 4. Uses Claude for every homework question. No longer sure if he understands calculus or if Claude does.
+
+**The insight.** "AI off" toggles don't work because they fight the user. The novel move: *friction that rewards self-knowledge*. Before Claude answers, the user predicts the answer and rates their confidence. Then they see where they were right, where they were wrong, and what concept the gap lived on.
+
+**AI pipeline:**
+1. **Intercept** — user submits query to Claude
+2. **Elicit** — "before I answer: what do you think, and how confident?"
+3. **Answer** — Claude answers
+4. **Diff** — compare user prediction vs answer; localize the gap
+5. **Tag** — concept cluster (e.g. "chain rule," "integration by parts")
+6. **Aggregate** — weekly blindspot report, confidence calibration curve
+7. **Coach** — targeted practice on weakest concept
+
+**Panel champions:** Sandy (agency-preserving AI is her policy sweet spot), Gabrielle (student product).
+
+**Risk:** Friction = abandonment. Mitigation: make friction rewarding (streak, calibration score, blindspot heatmap); ship as default-off, opt-in "training mode."
+
+---
+
+### 8. Receipts
+
+**Tackles:** A1 (ambient AI agents and trust) + E2 (governance / auditability by default)
+**For:** Daniel, 34, freelance designer in Tiong Bahru. Lets his AI agent handle Grab bookings, Carousell DMs, and bill payments. Lost S$400 to a phishing reply last month.
+
+**The insight.** Permissions dashboards are an engineer's mental model of trust. Consumers don't want rules — they want *receipts*: a credit-card-statement-style timeline of every action their agents took, with one-tap undo on each. The novel primitive is a signed, user-facing activity feed; the trust UX is retrospective accountability, not prospective policy.
+
+**AI pipeline:**
+1. **Intercept** — agent action attempted (tool call / API request / outbound message)
+2. **Sign** — C2PA-style signature: "this action was taken by agent X on behalf of Daniel at time T"
+3. **Classify** — what kind of action, what blast radius ($ / data / social)
+4. **Log** — user-facing timeline UI (Apple Wallet-esque)
+5. **One-tap rollback** — for reversible actions (message sent, booking made); flag irreversibles upfront
+6. **Pattern detection** — alert on suspicious sequences (new domain, amount spike, unknown recipient)
+7. **Weekly digest** — summary + share selected receipts as provenance proof (e.g., "my agent did reply that; here's the signed log")
+
+**Panel champions:** Sandy (policy + agent trust), Nishith (signed-infrastructure depth), James (consumer-scale).
+
+**Risk:** "Credit-card statement for agents" sounds like logging, not product. Mitigation: demo must show the rollback + fraud-catch moment, not just the feed. Pick one killer detection scenario (e.g. agent replies to phishing) and show the one-tap save.
+
+---
+
+### 9. Authenticity Letter
+
+**Tackles:** A2 (fragile authenticity in a synthetic world)
+**For:** Priya, 29, HR manager at an SME in Tanjong Pagar. Screens 40 CVs a week; two recent hires had AI-fabricated portfolios.
+
+**The insight.** AI content detectors are a losing game. The novel move is *positive authenticity* — a short live structured interview with an AI that produces a signed, time-stamped, replayable authenticity artefact. Instead of "is this resume AI-written?" the HR system asks "has this candidate produced a 5-minute signed live session?" Flips the burden from suspicion to proof.
+
+**AI pipeline:**
+1. **Schedule** — candidate books a 5-min session
+2. **Live structured interview** — AI asks standardized questions; records voice + video
+3. **Analyse** — real-time coherence (latency, contradictions, impersonation flags)
+4. **Voice biometrics** — match future sessions to this baseline
+5. **Sign (C2PA)** — transcript + recording signed with candidate ID + timestamp
+6. **Publish** — HR-facing verification widget attached to application
+7. **Re-verify** — if doubts later, compare new voice/video against the stored baseline
+
+**Panel champions:** Sandy (provenance is her policy sweet spot), Nishith (signed-infra depth).
+
+**Risk:** Feels like surveillance. Mitigation: candidate-initiated (they own the artefact and re-use across applications); frame as "portable proof-of-self," not "HR verification tool."
+
+---
+
+### 10. Portfolio Passport
+
+**Tackles:** B5 (opportunity access socially gated, AIF) + B1 (skills → income) + B3 (learning ↔ real work)
+**For:** Hui Ling, 22, SUSS student, rental flat in Bedok. Her portfolio is stronger than the ACS-SMU pipeline her professors mentor — but the intros go to them.
+
+**The insight.** "Blind hiring" tools that hide names still rank by pedigree through the backdoor. The novel move is making *real-world proof of work* first-class and verifiable. Every project Hui Ling ships gets signed by the actual user/client (classmate, professor, customer). Instead of "I did a scraping project for class" it's "I built this Carousell price tracker, used by 47 classmates for 3 weeks — signed by them." Employers retrieve by capability signal, not school brand.
+
+**AI pipeline:**
+1. **Intake** — project (repo link / deployed URL / doc / screenshot)
+2. **Extract** — LLM extracts "what did this do, for whom, with what outcome"
+3. **Identify signers** — who actually used this? surface them
+4. **Auto-outreach** — one-tap "can you sign this to confirm you used it?" to each
+5. **Aggregate** — per-user Portfolio Passport (signed claims + evidence)
+6. **Match** — employers/opportunities query by capability signal; ranked by signed proof
+7. **Weight** — referrals weighted by strength of signed evidence, not school brand
+
+**Panel champions:** Janet (AIF sponsor), Hester (Epic Angels), Gabrielle (SMU student entrepreneurship). Triple-champion AIF. Also Desmond secondary (SG hiring).
+
+**Risk:** Cold-start — nobody signs anything on day 1. Mitigation: seed with classmate-signed school projects where the cohort has lived network; demo with one complete example from a real user interview.
+
+---
+
+### 11. Quiet Clients
+
+**Tackles:** B3 (learning ↔ real work) + B4 (entry-level compressed by AI)
+**For:** Jia En, 21, NUS CS Year 3, CAP 4.8, zero deployed code — *and* Aunty Mui the hawker who has a real AI-amenable problem (her inventory mess) but can't articulate it.
+
+**The insight.** Project-based learning platforms (Riipen, Parker Dewey) fail because they rely on enterprises posting polished briefs. SEA SMEs — hawkers, coffeeshops, trades, small retailers — have *more* real AI-amenable problems than enterprises, but they can't scope them. The novel move: an AI agent interviews the SME, extracts the real problem, scopes it into a 2-week student-doable project, supervises the handoff.
+
+**AI pipeline:**
+1. **SME intake** — voice/WhatsApp conversation in Mandarin/Malay/English
+2. **Problem extraction** — LLM identifies the candidate project
+3. **Feasibility scope** — break into 2-week deliverable with student-reachable tech
+4. **Match** — find students with required skill signature (from Portfolio Passport if stacked)
+5. **Kickoff** — spec doc + weekly milestones generated automatically
+6. **Supervision** — agent attends async check-ins; flags blockers
+7. **Measure impact** — SME reports outcome; signed into student's portfolio
+
+**Panel champions:** Desmond (SG SME ecosystem), Gabrielle (student entrepreneurship), Bing Wen (if framed as Workfare SME).
+
+**Risk:** SME-side trust — will Aunty Mui let a 21yo touch her POS? Mitigation: start with non-critical problems (inventory log analysis, not payment integration); SME can always revoke.
+
+---
+
+### 12. Protocol Grader
+
+**Tackles:** D2 (unsafe experimentation in health optimisation)
+**For:** Bryan, 26, software engineer. Takes 8 supplements a day based on podcasts. Stacking creatine, NAD+, ashwagandha, and a testosterone booster with zero supervision.
+
+**The insight.** Supplement-interaction scanners are pseudo-science theatre. "DocGPT" wellness chatbots get torched by Wanting. The novel move is a *rigor layer* for any health experiment Bryan's considering: grade evidence per claim (A/B/C/D), flag dangerous interactions with real literature, and — critically — design a *safe N-of-1 experiment* with explicit rollback criteria. Scientific method as a product.
+
+**AI pipeline:**
+1. **Intake** — protocol (free text / screenshot of a podcast recommendation / link)
+2. **Parse** — extract discrete claims ("NAD+ 500mg boosts NAD levels" / "ashwagandha reduces cortisol")
+3. **RAG** — each claim against peer-reviewed literature
+4. **Grade** — evidence level per claim (A: multiple RCTs / B: observational / C: preclinical / D: none)
+5. **Interactions** — cross-reference known interactions; flag dangerous combinations with citations
+6. **Experiment design** — propose N-of-1 protocol with measurable endpoints, duration, rollback triggers
+7. **Follow-up** — weekly check-in; if endpoint moves adversely, trigger stop
+
+**Panel champions:** Wanting (clinical rigor + pipeline), Sandy (safety-at-scale if framed as safety infra).
+
+**Risk:** Liability. Mitigation: never prescribes; shows evidence and lets user decide. Hard disclaimers. Frame as "scientific method assistant," not medical advice.
+
+---
+
+### 13. Agent Stethoscope
+
+**Tackles:** E1 (AI-native infra for agents) + E2 (governance / auditability)
+**For:** Ishaan, 28, indie builder. Has 4 agents held together with Slack + webhooks + a Google Sheet. When they fight or loop, he has no idea why.
+
+**The insight.** Another agent framework is noise. The real gap: multi-agent systems have no *debugger*. When Agent A asked Agent B for X and B responded with Y which A misinterpreted as Z, there is no timeline that shows this. The novel move: a sidecar that instruments live multi-agent systems and gives a cross-agent reasoning trace — with LLM-narrated "here's why they miscommunicated."
+
+**AI pipeline:**
+1. **Instrument** — sidecar hooks into MCP / webhook / queue bus (no code changes needed)
+2. **Capture** — every cross-agent event stored with reasoning trace
+3. **Reconstruct** — unified timeline across agents; visualize message flow
+4. **Narrate** — LLM explains reasoning mismatches in plain English
+5. **Rewind** — replay any agent turn with modified input
+6. **Minimum repro** — export the smallest trace that reproduces a bug
+7. **Share** — signed trace link for team debugging
+
+**Panel champions:** Nishith (production agent debugging is *exactly* his lens), Sandy (observability = governance), James (scale if agent systems proliferate).
+
+**Risk:** Devtool pitch to a mostly-VC panel will land flat unless a killer product-on-top is shown. Mitigation: lead the pitch with a consumer-agent disaster demo (an agent spending $200 twice), then reveal "this is how I caught it."
+
+---
+
+### 14. Hawker Inventory Agent
+
+**Tackles:** E3 (AI applied to physical systems) + A3 (AI personalisation for underserved)
+**For:** Aunty Mui, 58, hawker stall owner. Orders ingredients by WhatsApp 3×/week, always over- or under-orders, throws away ~15% of daily prep.
+
+**The insight.** Smart-home demos, IoT dashboards, and digital-twin decks are the default E3 traps — all require hardware Aunty Mui won't install. The novel move: *zero hardware*. Runs on her existing phone and existing WhatsApp supplier. She voices her day's usage in Mandarin/Hokkien/Malay; the agent builds a per-stall demand model, drafts supplier WhatsApp messages, flags waste patterns, and answers "is fishball noodles actually profitable?"
+
+**AI pipeline:**
+1. **Voice ingest** — daily 30-second voice note in her language
+2. **Multilingual STT + domain vocab** — food-specific entity extraction (bee hoon, kway teow, chilli crab paste)
+3. **Demand model** — per-item, per-day-of-week, weather-adjusted forecast
+4. **Order drafting** — auto-draft WhatsApp to supplier; she reviews + sends
+5. **Waste attribution** — flag high-waste items, suggest portion adjustments
+6. **Margin analysis** — per-dish profitability with current prices
+7. **Weekly stall report** — voice summary in her language of what she made, what she wasted, what to change
+
+**Panel champions:** Nishith (real multi-step pipeline, domain-specific STT, physical-world integration), James (SEA scale — millions of hawkers / warungs / kedai kopi across SEA), Cheryl/Daryl/Malavika (SEA VC market fit), Desmond (SG SME).
+
+**Risk:** Hawkers are famously tool-skeptical. Mitigation: zero-onboarding product — she WhatsApps a number, agent does the rest; no app install. Demo: a real hawker using it for 3 days, measured waste reduction.
+
+---
+
+## Stacking map
+
+Ideas that share primitives and could merge if you want one big swing:
+
+- **Filial Proxy + Next-Visit Briefing** — both mediate between SG healthcare and humans who can't navigate it alone. Elderly parent + overseas child + polyclinic. Strongest Bing Wen + Wanting stack.
+- **Fair Share Agent + Remix Club** — both are "agent absorbs invisible coordination work." Class rep + fandom group chat. Pure AIF / Janet stack.
+- **Numbers Honestly + Predict-Then-See** — decision support with honest uncertainty and user-in-the-loop calibration. Fertility/career + health/learning. Sandy + Wanting + Janet.
+- **Portfolio Passport + Quiet Clients + Brain Gigs** — the full B-theme stack. Tacit knowledge extraction → student-SME projects → signed portfolio. Could be one coherent platform for "SEA opportunity discovery." Gabrielle + Desmond + Bing Wen + Janet (if Portfolio Passport is the anchor AIF challenge).
+- **Receipts + Authenticity Letter + Agent Stethoscope** — Sandy's full provenance / trust stack. Could be one "agent accountability OS" with consumer, HR, and infra surfaces.
+- **Hawker Inventory Agent + Next-Visit Briefing** — both are "voice-native multilingual SEA agent with real domain vocab, real pipeline, zero hardware." Different user but same primitive. Could be the Nishith-bait mega-pitch.
+
+---
+
+## Coverage check
+
+Challenges covered: A1 (Receipts), A2 (Authenticity Letter), A3 (Brain Gigs, Hawker Agent), A4 (Filial Proxy), A5 (Remix Club), B1 (Brain Gigs), B2 (Brain Gigs), B3 (Quiet Clients, Portfolio Passport), B4 (Quiet Clients), B5 (Portfolio Passport), C3 (Fair Share), C4 (Fair Share), D1 (Next-Visit Briefing), D2 (Protocol Grader), D3 (Next-Visit Briefing), D4 (Filial Proxy, Next-Visit Briefing), D5 (Predict-Then-See), D6 (Numbers Honestly), E1 (Agent Stethoscope), E2 (Filial Proxy, Receipts, Agent Stethoscope), E3 (Hawker Inventory Agent), E4 (Predict-Then-See), E5 (Remix Club).
+
+**Intentionally skipped:** C1 (Priority collapse) and C2 (Decision fatigue) — `challenge-statements.md` flags these as weakest-advocate zones (no dedicated champion + crowded market). Enter only with a very sharp edge, not as default hackathon play.
+
+---
+
+## What I deliberately avoided
+
+Everything on the per-challenge "done to death" lists: fall-detection wearables, AI-content detectors, fertility trackers, unified inboxes, habit-score dashboards, agent-framework SDKs, pink-branded anything.
+
+Pick any card above, paste it into a separate terminal, and ask for: deck outline, tech stack choices, week-by-week build plan, interview script for Evidence-of-Demand, or a de-risking plan.

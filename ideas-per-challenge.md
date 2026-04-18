@@ -294,7 +294,7 @@ Smart-speaker microphone detects falls/silence/confusion; zero wearables.
 
 ---
 
-## Challenge 5 · A5 — AI Adoption Gap Becomes Power Gap *(AIF)*
+## Challenge 5 · A5 — AI Adoption Gap Becomes Power Gap *(Powered by AIF)*
 > *How might we design AI learning environments that increase experimentation confidence among teenage girls before self-selection away from tech begins?*
 > **Panel champions**: Janet (AIF sponsor), Hester (Epic Angels), Gabrielle (SMU)
 
@@ -527,7 +527,7 @@ Company hires junior + AI agent as a pair; junior directs, AI learns the company
 
 ---
 
-## Challenge 10 · B5 — Opportunity access is socially gated *(AIF)*
+## Challenge 10 · B5 — Opportunity access is socially gated *(Powered by AIF)*
 > *How might we redesign opportunity discovery so access is driven less by social capital and pedigree, and more by demonstrated potential and readiness?*
 > **Panel champions**: Janet (AIF), Hester, Gabrielle
 
@@ -701,7 +701,7 @@ Every "reply-expected" message in one queue; one-click reply back to source.
 
 ---
 
-## Challenge 14 · C4 — Invisible cognitive labor *(AIF)*
+## Challenge 14 · C4 — Invisible cognitive labor *(Powered by AIF)*
 > *How might we reduce invisible coordination labor, stop it from defaulting to women disproportionately, and overall preserving the human quality of relationships and collaboration?*
 > **Panel champions**: Janet (AIF), Hester · **Secondary**: Bing Wen if framed as caregiver labor
 
@@ -957,7 +957,7 @@ Both opt in; AI brokers shared goals without surveillance.
 
 ---
 
-## Challenge 20 · D6 — Fertility window vs career acceleration *(AIF)*
+## Challenge 20 · D6 — The fertility window vs career acceleration dilemma *(Powered by AIF)*
 > *How might we build decision-support tools that give young women realistic, empowering data about long-term life planning — without fear-based narratives?*
 > **Panel champions**: Janet, Hester, Wanting
 
@@ -1167,7 +1167,7 @@ Tracks your pre-AI vs. post-AI quality curves on specific skills; flags fading o
 
 ---
 
-## Challenge 25 · E5 — From Prompt User to System Architect *(AIF)*
+## Challenge 25 · E5 — From Prompt User to System Architect *(Powered by AIF)*
 > *How might we build AI-native development tools or "agentic playgrounds" that move young women from prompt-engineering to building and directing system architecture?*
 > **Panel champions**: Janet, Hester, Gabrielle · **Secondary**: Sandy
 
