@@ -16,21 +16,167 @@ Each has ≥3 panel champions, a clear 5–7 step AI pipeline, SEA-specific grou
 4. **[Portfolio Passport](#10-portfolio-passport)** — B5 (AIF). Janet + Hester + Gabrielle. Triple-champion AIF. Replaces network/pedigree with signed real-world proof of work.
 5. **[Hawker Inventory Agent](#14-hawker-inventory-agent)** — E3. Nishith + James + SEA VCs + Desmond. Nishith-bait: real multilingual voice → demand-model → auto-ordering pipeline. Strongest non-AIF lane.
 
-### If the goal is starting a company (top 3 for the VC bloc)
+### If the goal is starting a company (top 5 for the VC bloc)
 
 6 of 15 judges are VCs (Cheryl, Daryl, Malavika, Theresa, Joshua, Heng Xuan) plus Hester (angel) and James (corporate). What they reward: **SEA-first GTM, defensibility, business-model clarity, founder-market fit, durable moats, regional TAM**. What they punish: US-coastal copycats, hackathon-only defensibility, unclear monetization.
 
-1. **[Envelope](#16-envelope--agent-native-payment-rail)** — A1 + E1 + E2. Nishith (Stripe!) + Sandy + James. "Stripe for agents." Payment rails designed for agents, not retrofitted from human rails. Infrastructure moat + two-sided network effect.
-2. **[Kasih Credit](#15-kasih-credit--sea-alt-credit-agent)** — A3 + B2 (+ AIF if framed for women). James + Janet + SEA VCs + Heng Xuan. Alt-credit for SEA's 300M thin/no-file adults. Classic SEA fintech — massive TAM, regulatory moat, data flywheel.
-3. **[MigrantMate](#18-migrantmate--ofw-remittance--household-agent)** — A3 + C3 + D4. Malavika + James + Hester. Household agent for OFWs managing family finances from 2,000km away. $150B+ remittance flow, family-network effect, category-creating.
+1. **[Carbon Invoice](#26-carbon-invoice--sme-scope-3-emissions-agent)** — E3 + A3. James (his literal job: Head of Sustainability at Ant) + SEA VCs + Heng Xuan. SME Scope-3 emissions reporting → unlocks green finance. Massive regulatory tailwind (CSRD, SG CID); James is pre-sold.
+2. **[AgenticAg](#30-agenticag--smallholder-farmer-ai-agent)** — E3 + A3. James + Malavika + SEA VCs. Voice-native AI agent for 200M+ SEA smallholder farmers. The biggest underserved agent-TAM on earth; 30–70% middleman margin to capture.
+3. **[Envelope](#16-envelope--agent-native-payment-rail)** — A1 + E1 + E2. Nishith (Stripe!) + Sandy + James. "Stripe for agents." Infrastructure moat + two-sided network effect. Category-creating.
+4. **[Kasih Credit](#15-kasih-credit--sea-alt-credit-agent)** — A3 + B2 (+ AIF if framed for women). James + Janet + SEA VCs + Heng Xuan. Alt-credit for SEA's 300M thin/no-file adults. Classic SEA fintech — massive TAM, regulatory moat, data flywheel.
+5. **[MigrantMate](#18-migrantmate--ofw-remittance--household-agent)** — A3 + C3 + D4. Malavika + James + Hester. Household agent for OFWs managing family finances from 2,000km away. $150B+ remittance flow, family-network effect.
 
-### The bridge ideas (score well in both lenses)
+Strong backups: [Claims](#27-claims--sea-micro-insurance-agent) (insurance inclusion), [Working Capital](#28-working-capital--invoice-factoring-agent-for-sea-smes) (SME cashflow), [SME Counsel](#29-sme-counsel--ai-lawyer-for-sea-smes) (legal for the underserved), [LiveTrust](#17-livetrust--indonesian-social-commerce-trust-agent) (social commerce trust), [ComplyAI](#19-complyai--sg-early-stage-compliance-agent) (SG compliance SaaS).
+
+### If the goal is "everyone would use this" (universal consumer hits)
+
+These solve problems every single person in the room has — judges, audience, teammates. They lean on universality over niche specificity, and almost all can be demoed with a problem the user is *personally* dealing with that week.
+
+1. **[Rehearse](#23-rehearse)** — C4 (AIF) + E4. Janet + Hester + Sandy + Gabrielle. Roleplay partner for hard conversations (raises, breakups, boundaries, feedback). Universal anxiety, no existing product.
+2. **[Aftermath](#25-aftermath)** — A4 + D4 + C4. Janet/Hester + Bing Wen + Wanting. Logistics agent for life ruptures (grief, divorce, new baby, job loss). Everyone goes through 3–5 of these.
+3. **[PaperMate](#20-papermate--consumer-bureaucracy-agent)** — A3 + E2. James + Janet + Sandy + Nishith. Full consumer-bureaucracy agent: taxes, rebates, insurance claims, form-filling, subscription cancellation. Boring but valuable; concrete demo.
+
+### The bridge ideas (score well in panel *and* VC lenses)
 
 If you want hackathon-win-plus-investor-conversation in one swing, these are the overlap: **[Hawker Inventory Agent](#14-hawker-inventory-agent)**, **[Portfolio Passport](#10-portfolio-passport)**, **[Agent Stethoscope](#13-agent-stethoscope)**, **[Filial Proxy](#1-filial-proxy)**.
 
 ---
 
-## All 19 ideas
+## Pain points solved + value delivered
+
+Quick-reference for "what problem am I solving" and "what value do I bring" per idea. **Pain** = what's broken today. **Value** = what changes when this exists. This is pitch-slide framing — the problem/solution slide writes itself from the two lines below.
+
+### Panel-optimised ideas (1–14)
+
+**1. Filial Proxy**
+- *Pain:* Adult children abroad can't manage elderly parents' SG healthcare admin across timezones; parents forget things but won't say; admin falls through the cracks.
+- *Value:* Overseas filial duty becomes structurally possible — parent stays independent with dignity, child stays informed without invasion, admin actually gets done.
+
+**2. Numbers Honestly**
+- *Pain:* Young professional women face fertility-career trade-offs with only platitudes or fear narratives for guidance; no honest probabilistic model of the actual pathways.
+- *Value:* A data-grounded decision surface showing real outcome distributions per pathway — decide from evidence, not from pressure.
+
+**3. Fair Share Agent**
+- *Pain:* One person (usually the woman) carries invisible coordination labor for the whole group; resentment builds; others don't see the work.
+- *Value:* Coordination labor gets *absorbed* by the agent (not just measured) — she stops being the chaser while the work still happens.
+
+**4. Remix Club for Teen Girls**
+- *Pain:* Teen girls use AI consumptively (homework) but never build with it; male peers ship Discord bots at 14; adoption gap compounds into capability gap.
+- *Value:* Low-bar entry into AI *building* via fandom/social contexts they already care about — confidence comes from remixing friends, not bootcamp pedagogy.
+
+**5. Next-Visit Briefing**
+- *Pain:* 2-minute polyclinic visits → generic advice → no between-visit adherence support → patient drifts; clinician has no real data at the next visit.
+- *Value:* Between-visit support in patient's language + a structured briefing that makes the next 2 minutes data-rich instead of generic.
+
+**6. Brain Gigs**
+- *Pain:* Young people with tacit knowledge (delivery routes, multilingual, local expertise) can't monetize it because gig platforms require resumes; brains idle while they bike.
+- *Value:* Tacit knowledge becomes sellable micro-service + proof-of-work + pathway to higher-value gigs — no resume needed.
+
+**7. Predict-Then-See**
+- *Pain:* Students use Claude for every question and lose track of what they actually know; can't tell if they understand or if Claude does.
+- *Value:* Each query becomes a self-assessment + gap diagnosis — learning accelerates because blindspots become visible.
+
+**8. Receipts**
+- *Pain:* Agents act invisibly; users find out what happened only when something goes wrong; no rollback; phishing goes unnoticed.
+- *Value:* Signed receipt feed + one-tap rollback per action — consumers can trust agents because they can *see* and *undo* what they did.
+
+**9. Authenticity Letter**
+- *Pain:* HR can't tell which candidates are AI-fabricated; interviews are gameable; hires arrive unable to do what they "proved."
+- *Value:* Candidates produce portable signed live artefacts — positive proof-of-human replaces losing detection games.
+
+**10. Portfolio Passport**
+- *Pain:* Opportunity access is gated by school brand and networks, not by what you've built; capable people outside the ACS-SMU pipeline never get surfaced.
+- *Value:* Signed real-world proof-of-work replaces pedigree — employers retrieve by capability signal, not lineage.
+
+**11. Quiet Clients**
+- *Pain:* SEA SMEs have real AI problems but can't articulate them; students want real work but can't access enterprise; both sides sit idle.
+- *Value:* AI scopes the SME's problem + matches a student + supervises the handoff — both sides get paid work neither could get alone.
+
+**12. Protocol Grader**
+- *Pain:* Biohackers stack supplements from podcasts; no safety oversight; dangerous interactions unflagged; health decisions rest on marketing.
+- *Value:* Evidence-graded + interaction-flagged + N-of-1 experiment designed — rigor delivered as a product, not a lecture.
+
+**13. Agent Stethoscope**
+- *Pain:* Multi-agent systems fail silently (loops, missed messages, misreads); no debugger exists; devs debug by prayer.
+- *Value:* Cross-agent reasoning trace + narrated mismatches + rewind/replay — agent debugging becomes possible at all.
+
+**14. Hawker Inventory Agent**
+- *Pain:* Hawkers over- or under-order ingredients, waste 15% of prep, don't know per-dish profitability — no tool fits their actual workflow (WhatsApp, voice, Mandarin/Hokkien/Malay).
+- *Value:* Voice-native demand forecasting + auto-ordering + margin analysis in their language — waste drops, profit rises, no hardware.
+
+### VC-friendly ideas (15–19)
+
+**15. Kasih Credit**
+- *Pain:* 300M+ SEA adults are thin/no-file; banks can't underwrite them; BNPL preys on them; financial exclusion compounds into poverty traps.
+- *Value:* Alt-credit profile from gig earnings, e-wallet flow, utility patterns — bankable where previously invisible to the formal system.
+
+**16. Envelope**
+- *Pain:* Payment rails assume human-per-transaction authorization; agents misuse credentials; limits are crude; no budget-envelope concept; mistakes cost real money.
+- *Value:* Purpose-built agent payment infrastructure — per-merchant scopes, signed identities, anomaly freezes, one-tap rollback.
+
+**17. LiveTrust**
+- *Pain:* SEA social commerce ($80B+) runs on livestream vibes; buyers lose money to fake sellers; no trust infrastructure; platforms won't fix it (volume > trust for them).
+- *Value:* Real-time trust score + in-session escrow — buyers protected, good sellers differentiated, fraud becomes unprofitable.
+
+**18. MigrantMate**
+- *Pain:* OFWs manage distributed households from 2,000km away through crappy WhatsApp threads + transactional remittance apps; emotional + admin overload daily.
+- *Value:* Household agent handles recurring bills, flags anomalies, reports weekly in their language — peace of mind replaces anxiety.
+
+**19. ComplyAI**
+- *Pain:* SG solo founders spend 40+ hours/month on ACRA/IRAS/CPF/MOM filings; corp-secs charge $300–800/mo for the same manual work.
+- *Value:* Compliance owns itself — agent drives the calendar, files autonomously, audits — founder-time reclaimed for product.
+
+### Universal consumer ideas (20–25)
+
+**20. PaperMate**
+- *Pain:* Everyone has a drawer of "paperwork I should do"; cost of figuring out each task > prize; money and rights left on the table.
+- *Value:* Paperwork inbox handled end-to-end — unclaimed money comes back, admin stops consuming your time.
+
+**21. Refund Hunter**
+- *Pain:* $900+/adult/year in unclaimed refunds (flight delays, warranty, utility, rebates); rules too complex per-claim to be worth bothering.
+- *Value:* Every refund you're owed gets filed automatically, success-fee only — money back in your pocket with zero effort.
+
+**22. Fine Print**
+- *Pain:* Informed buyers negotiate, uninformed buyers sign; adversarial clauses in leases/loans/insurance/employment cost years of money and rights.
+- *Value:* Contract read + benchmarked + flagged + counter-proposal drafted + negotiation rehearsed — the informed-buyer advantage becomes everyone's.
+
+**23. Rehearse**
+- *Pain:* Hard conversations (raises, breakups, feedback, boundaries) get avoided; avoidance compounds; nobody has a willing practice partner at 2am.
+- *Value:* AI roleplay partner playing the *other person* — you walk into the real conversation ready, phrasing rehearsed, fallbacks lined up.
+
+**24. Real Research**
+- *Pain:* Google is worse every year; ChatGPT hallucinates; Perplexity compresses without evaluating; high-stakes decisions rest on bad summaries.
+- *Value:* Real research workflow — 20+ sources graded, conflicts surfaced, synthesized, remembered — you see the work, not just the answer.
+
+**25. Aftermath**
+- *Pain:* Life ruptures (grief, divorce, new baby, job loss, diagnosis) dump 50 admin tasks on you exactly when capacity is lowest; grief gets buried under paperwork.
+- *Value:* Agent owns the rupture's logistics graph — handles what it can, drafts what you need to approve, paces the load — you deal with the life, not the paperwork of the life.
+
+### More VC-focused ideas (26–30)
+
+**26. Carbon Invoice**
+- *Pain:* Corporate buyers are pushing Scope-3 reporting downstream; 50M+ SEA SMEs can't calculate or report their emissions; consultants charge $10k+; SMEs risk losing supply-chain contracts.
+- *Value:* Auto-generated CDP-compliant emissions reports from ops data + access to preferential green financing — SMEs stay in supply chains and pay less for capital.
+
+**27. Claims**
+- *Pain:* 100M+ SEA gig workers pay into micro-insurance but claim rates are under 5%; the process is opaque, the money vanishes into insurer coffers.
+- *Value:* Agent detects claimable events, files, and appeals denials automatically — the money paid in actually comes back out when it should.
+
+**28. Working Capital**
+- *Pain:* SEA SMEs wait 60–90 days for corporate payments while paying suppliers upfront; invoice factoring is manual, expensive, gatekept; cashflow failure is the #1 SME mortality cause.
+- *Value:* AI-built credit case + financier matching + 48-hour disbursement at half the typical factoring fee — SMEs don't die from cashflow.
+
+**29. SME Counsel**
+- *Pain:* SEA SMEs can't afford $300–800/hr lawyers; they sign bad contracts or skip legal entirely; US-template downloads don't match local jurisdictions; disputes cost 10x later.
+- *Value:* AI lawyer drafts SEA-jurisdiction-specific documents, reviews incoming contracts, negotiates, produces audit trail — first-class legal access where there was none.
+
+**30. AgenticAg**
+- *Pain:* 200M+ SEA smallholder farmers make daily crop, pricing, financing decisions with zero information; middlemen capture 30–70% of margin; generations of exploitation compound.
+- *Value:* Voice-native AI agent (local languages, WhatsApp, offline-capable) gives agronomy + pricing + direct-buyer access + input credit — farmers keep the margin that was always theirs.
+
+---
+
+## Panel-optimised ideas (1–14)
 
 ### 1. Filial Proxy
 
@@ -479,6 +625,305 @@ These 5 ideas are tuned for the VC bloc's lens: SEA-first GTM, defensibility, cl
 
 ---
 
+## Universal ideas (everyone has this problem)
+
+These 6 ideas solve universal adult pains — the kind of thing every judge, every teammate, every audience member will recognise from their own week. They're less niche-optimised than the panel-score picks but have the upside of a demo that lands in the gut: the judges *want* this to exist. All still AI-load-bearing and non-trivial.
+
+### 20. PaperMate — Consumer Bureaucracy Agent
+
+**Tackles:** A3 (equity — lower-income households leave more on the table) + E2 (agent audit/trust) + A1 (agent trust)
+**For:** Anyone who has ever put off a tax filing, insurance claim, rebate, form renewal, or subscription cancellation. Which is everyone.
+
+**The insight.** We all have a mental drawer of "paperwork I should do." Tax filing, health insurance claims, parking appeals, warranty claims, utility disputes, rebate applications, school forms. Everyone leaves money and rights on the table because the cost of figuring out each one exceeds the prize *on any one item*. The novel move: an agent that owns the entire paperwork inbox end-to-end, so you never have to think about any single filing.
+
+**AI pipeline:**
+1. Ingest — email + physical mail (photo) + SMS for anything "action required"
+2. Classify — deadline, category, estimated value (refund amount / cost of missing)
+3. Triage — urgent / worth it / auto-decline junk
+4. Gather — required documents, account info, prior forms
+5. Draft — fill the form / write the letter / compose the appeal
+6. Submit — via API, email, portal, or print-and-mail service
+7. Track + follow up — chase replies, escalate past deadlines
+
+**Panel champions:** James (equity framing — lower-income households hit hardest), Janet (AIF if framed as women carrying household paperwork), Sandy (agent audit), Nishith (multi-step real pipeline).
+
+**Business model:** Freemium + success fee on recovered refunds.
+**Moat:** Institutional integrations (every new gov portal = moat); longitudinal household data.
+**TAM:** Every adult.
+
+**Risk:** "AI fills out forms" sounds incremental. Mitigation: lead with one specific concrete win ("agent found $1,200 in GST Voucher rebates you didn't know you qualified for, filed them, money lands Friday").
+
+---
+
+### 21. Refund Hunter
+
+**Tackles:** A3 (unequal outcomes — unclaimed money is a regressive tax on attention)
+**For:** Anyone who's ever had a flight delayed, a product break within warranty, a utility overcharge, an expired rebate, or a government top-up they forgot to claim. Est. $900+/adult/year in unclaimed refunds in developed markets.
+
+**The insight.** Refund-hunting is a literal free lunch — the money is yours, you just have to file. Nobody does it because the effort of knowing eligibility > expected value *per claim*. The novel move: an agent that continuously monitors your life for refund-triggering events and files automatically. Not a coupon extension — a full-claim agent that knows rules across airlines, utilities, warranties, gov rebates, insurance.
+
+**AI pipeline:**
+1. Ingest — email confirmations, credit-card statements, calendar, receipts
+2. Event detection — flight delay (via airline data), warranty breakage, utility spike, product recall, gov rebate eligibility
+3. Rule match — cross-ref claim rules per provider
+4. Evidence gather — auto-pull required docs
+5. File — submit via each provider's channel
+6. Follow up — chase denials, escalate
+7. Payout — deposit to user + keep a success-fee cut
+
+**Panel champions:** James (financial inclusion), Desmond (SG ecosystem), Cheryl/Daryl (SEA VC — clean BM), Janet (if framed as women managing household claims).
+
+**Business model:** Success fee (15–25% of recovered funds); no upfront cost.
+**Moat:** Claim-rules library (per provider, grows over time) + payout-outcome data.
+**TAM:** Every consumer. $900+/adult/year unclaimed globally.
+
+**Risk:** Sounds scam-adjacent. Mitigation: never charge upfront; show clear audit of every filing attempt; start with one demonstrable win (actual flight-delay EU261 claim demo'd live).
+
+---
+
+### 22. Fine Print
+
+**Tackles:** A3 (sophisticated buyers get better contracts than naive ones) + E4 (preserving agency — you still sign, but informed)
+**For:** Anyone signing a lease, loan, insurance, SaaS contract, employment offer, or T&C. Which is everyone, several times a year.
+
+**The insight.** The informed buyer reads + negotiates + gets better terms. The uninformed buyer signs blind and eats the losses. "AI contract summarizer" tools exist but they're ChatGPT with a PDF — one-shot, generic, no benchmarks. The novel move: an agent that reads on your behalf, *benchmarks* the contract against typical-market standards + your specific situation, flags adversarial clauses, drafts the counter-proposal email, and rehearses the negotiation conversation with you.
+
+**AI pipeline:**
+1. Ingest — contract PDF, email, or screenshot
+2. Parse — clauses → structured contract graph
+3. Benchmark — retrieve comparable contracts from corpus (SG tenancy norms, SaaS T&Cs, employment contracts)
+4. Flag — deviations, adversarial clauses, ambiguities
+5. Personalize — "your situation is X, so clause Y matters more than usual"
+6. Draft counter-proposal — specific redlines + email ready to send
+7. Rehearse — mock the negotiation conversation (chains into [Rehearse](#23-rehearse))
+
+**Panel champions:** Janet/Hester (women often get worse terms on housing/employment — AIF angle), Sandy (agency), Nishith (real corpus + retrieval pipeline), Desmond (SG rental-market specific).
+
+**Business model:** Per-contract ($10–20) or freemium + pro tier for high-stakes contracts.
+**Moat:** Contract corpus + outcome data (which counter-proposals actually get accepted).
+**TAM:** Every adult signing a contract; bigger B2B tier for SMEs.
+
+**Risk:** Users don't pay upfront for "what if." Mitigation: free tier reads + summarises; paid tier for redlines + negotiation script. Demo one real rental contract with visible $ savings over the term.
+
+---
+
+### 23. Rehearse
+
+**Tackles:** C4 (invisible cognitive labor — hard conversations disproportionately fall to women, AIF) + E4 (preserving agency — it's still your conversation) + C2 (decision fatigue)
+**For:** Anyone putting off a hard conversation. Asking for a raise. Breaking up. Setting a boundary with a parent. Giving tough feedback. Asking a friend for money back. Firing someone. Telling your partner you want / don't want kids.
+
+**The insight.** The anxiety of a hard conversation is (a) not knowing what to say, (b) not knowing how they'll respond, (c) never having practiced the flow. Every therapist/coach says "rehearse it" but nobody has a willing partner at 2am when the anxiety is worst. The novel move: an AI roleplay partner that plays the *other person* (tuned with what you know about them), lets you try multiple openings, shows likely responses, and gives you a script you actually feel ready to use.
+
+**AI pipeline:**
+1. Intake — what's the conversation? who's the other person? what do you want? what do you fear?
+2. Model them — LLM builds "the other person" agent from what you know (personality, history, triggers)
+3. Role-play — you speak, agent responds as them; iterate multiple takes
+4. Branch — "what if I open with X vs Y?" replay different paths
+5. Identify sticking points — where does it always break down?
+6. Coach — tone, pacing, phrasing, bridge lines when they push back
+7. Final script — bullet points you can actually use, plus fallback lines for common blow-ups
+
+**Panel champions:** **Janet + Hester** (AIF — women disproportionately carry emotional labor + avoid hard conversations), Sandy (agency-preserving AI — the agent plays the other person, you still speak), Gabrielle (student product: feedback to classmates, profs, team). **Triple-champion AIF** plus Sandy.
+
+**Business model:** Consumer subscription ($5–15/mo); pro tier for career-critical conversations (raise negotiations, job offers).
+**Moat:** Conversation data (learns your voice + the people in your life); emotional trust is sticky.
+**TAM:** Every adult. Very large, underserved.
+
+**Risk:** Sounds AI-therapy-adjacent → Wanting will flag. Mitigation: strictly frame as rehearsal tool, NOT therapy. Agent plays the other person, never gives life advice. Hard disclaimer on deep distress (route to human resources).
+
+---
+
+### 24. Real Research
+
+**Tackles:** A3 (good research is a privilege) + A2 (authenticity — grounded in sources, not hallucinated) + E4 (agency — see the sources, don't just accept the summary)
+**For:** Anyone researching a major decision. Which doctor to see. Which school for your kid. Which car to buy. Which insurance to pick. Which country to move to. Which supplement claim is real. Google gets worse every year; ChatGPT hallucinates; everyone flies blind.
+
+**The insight.** "AI-powered search" (Perplexity, Google SGE) compressed the internet into summaries but *lost the work of actually researching* — evaluating sources, weighing conflicting evidence, flagging sponsored content. The novel move: an agent that works like a good research assistant — reads 20+ sources, grades each for credibility, synthesizes with explicit conflict notes, and shows you the underlying sources ranked by quality. Persistent memory across queries.
+
+**AI pipeline:**
+1. Query — user asks a real question
+2. Broad search — 20+ sources across types (peer-reviewed, news, forums, gov, blog)
+3. Grade — credibility + recency + bias score per source
+4. Extract claims — what does each source actually say?
+5. Conflict resolution — where sources disagree, *surface* it (don't paper over)
+6. Synthesize — structured answer with confidence ranges + sourcing shown
+7. Remember — user can save + annotate; future queries build on prior research
+
+**Panel champions:** Sandy (authenticity + governance of AI outputs — her sweet spot), Gabrielle (students + research workflow), Wanting (health-research sub-vertical).
+
+**Business model:** Freemium — 3 free/mo, $10/mo unlimited.
+**Moat:** Source-grading model (proprietary) + user's personal research graph + reputation system on queries.
+**TAM:** Every knowledge worker, student, patient, parent.
+
+**Risk:** Perplexity is an incumbent. Mitigation: wedge is *research workflow* — conflict-surfacing, credibility-grading, persistent memory — not better search. Demo with a real high-stakes query ("is GLP-1 safe given my family history?") showing the difference from Perplexity's output.
+
+---
+
+### 25. Aftermath
+
+**Tackles:** A4 (independent living, family-applicable) + D4 (caregiver burnout — the "caregiver" here is whoever navigates the rupture) + C4 (invisible coordination labor, AIF possible)
+**For:** Anyone navigating the logistics of a life rupture. Grief. Divorce. New baby. Job loss. Diagnosis. Relocation. Separation. An aging parent's decline. Every adult goes through 3–5 of these.
+
+**The insight.** When life ruptures, you suddenly have 50 new admin tasks at the exact moment you have the least capacity. Notify people, cancel services, transfer accounts, handle estate admin, inform schools, change addresses, set up autopay for the other person's bills, figure out what to do with the joint Netflix. The novel move: an agent that owns the full logistics checklist of any major life event, handles what it can autonomously, drafts what needs your approval, and protects you from admin so you can deal with the actual life change.
+
+**AI pipeline:**
+1. Event onboarding — "what happened? (bereavement / divorce / new baby / ...)"
+2. Generate logistics graph — 40–80 tasks by category, prioritized by urgency
+3. Delegate — agent handles what it can autonomously (notify subscription services, cancel utilities)
+4. Draft — letters, messages, forms for tasks needing your approval
+5. Coordinate — loops in family members / professionals (lawyer, accountant) for their parts
+6. Track — status across weeks/months
+7. Emotional pacing — some tasks can wait; agent holds the list at *your* pace, doesn't overwhelm
+
+**Panel champions:** **Janet/Hester** (aftermath disproportionately falls on women — AIF-able), Bing Wen (end-of-life CPF nominations + widow admin is his exact lens), Wanting (caregiver support framing), Malavika (universal across SEA).
+
+**Business model:** One-time fee per event ($50–200) or always-ready subscription ($8/mo).
+**Moat:** Event playbooks (the library of known workflows per life event) + emotional trust (once someone goes through a rupture with you, they stay).
+**TAM:** Every adult; 3–5 events per adult life.
+
+**Risk:** Emotional sensitivity. Mitigation: strictly logistics agent, never emotional companion; always offer human-professional handoff for sensitive decisions (lawyer for divorce, grief counsellor for bereavement); user controls pacing.
+
+---
+
+## More VC-focused ideas (startup-pitch optimised)
+
+These 5 are written for the investor case first, panel-score second. Each targets a specific VC thesis (ESG + supply chain / SEA fintech inclusion / working capital / vertical B2B SaaS / smallholder TAM). They'd still score decently on the rubric, but the reason to pick one is "I want to actually raise money on this."
+
+### 26. Carbon Invoice — SME Scope 3 Emissions Agent
+
+**Tackles:** E3 (AI for physical systems) + A3 (underserved SEA SMEs)
+**For:** Aunty Mui's stall and 50M+ other SEA SMEs suddenly being told by their corporate buyers (Grab, Shopee, Unilever, Ant supply-chain partners) to report emissions or be dropped from supply chains. They have zero capacity to calculate this.
+
+**The insight.** Big corporates are pushing Scope-3 requirements downstream (CSRD in force from 2024; SG Climate Impact Disclosures mandatory from 2026). SEA SMEs — the suppliers — can't report and can't improve. Consultants charge $10k+ per report. The novel move: an agent that ingests ops data (invoices, utility bills, fuel receipts, deliveries) and auto-produces CDP-compliant emissions reports in the SME's language — then *unlocks preferential green financing* from lenders who need verified-green borrowers.
+
+**AI pipeline:**
+1. Ingest — invoices, utility bills, fuel receipts, delivery logs (voice / photo / WhatsApp)
+2. Classify — scope 1/2/3 category per transaction
+3. Estimate — emission factors (region + industry specific)
+4. Report — CDP / ISSB / SG CID-compliant output
+5. Benchmark — vs sector peers
+6. Improve — suggest reductions (supplier swap, energy switch)
+7. Finance — connect verified-green SMEs to preferential lending rates
+
+**Panel champions:** **James** (Head of Intl Sustainability at Ant — this is his exact job description; he's pre-sold on the thesis), Cheryl/Daryl/Malavika (SEA VC + ESG mandate), Heng Xuan (durable moat), Nishith (real pipeline depth), Desmond (SG SME fit).
+
+**Business model:** SaaS ($30–80/mo per SME) + bps on unlocked green financing.
+**Moat:** Emission-factor database (regional/sector-specific — expensive to build) + financier network + regulatory relationships + data flywheel (more SMEs → better benchmarks → better recommendations).
+**TAM:** 50M+ SEA SMEs × $50/mo SaaS + $100B+ SEA supply-chain finance market = the entire ESG-reporting wave.
+**Founder-market fit:** Strongest with sustainability or supply-chain finance background. Signals "we understand the regulatory wave AND the SEA SME ops reality."
+
+**Risk:** Emission-factor accuracy is a credibility bar. Mitigation: partner with one accredited factor provider (Climatiq, NTU sustainability lab) and make that dependency auditable. Claim "defensible estimates," not "certified."
+
+---
+
+### 27. Claims — SEA Micro-Insurance Agent
+
+**Tackles:** A3 (unequal AI outcomes) + B2 (low-friction earning as low-friction claiming) + A5/B5 (AIF if framed for women who over-represent in gig + domestic work)
+**For:** Grab/Gojek drivers, Carousell sellers, delivery riders, hawker assistants, domestic helpers across SEA — all paying into micro-insurance (gig platform insurance, NTUC Income micro plans, Sompo, AXA Go) with <5% claim rates because the process is opaque.
+
+**The insight.** SEA gig workers pay into micro-insurance but almost never claim. Not because claimable events don't happen — they happen constantly (accidents, phone damage, illness, missed shifts). The process is too confusing. The money vanishes into insurer coffers. The novel move: an agent that knows the 15–20 micro-insurance products common among SEA gig workers, monitors your life for claimable events, files for you, and appeals denials.
+
+**AI pipeline:**
+1. Policy upload — user photos policy docs or permits pull from e-wallet
+2. Policy parse — structured extraction of coverage, exclusions, time-limits
+3. Event monitoring — detect claimable events (accident from ride data, device breakage from repair receipt, missed-gig days from platform data)
+4. Eligibility match — event vs coverage
+5. Evidence auto-gather — required docs from user's existing records
+6. File — submit via insurer's channel
+7. Follow-up + escalate — chase, appeal denials, escalate to consumer protection
+
+**Panel champions:** **James** (financial inclusion at scale — his exact lens), Cheryl/Daryl/Malavika (SEA fintech), **Janet + Hester** (gig/domestic work skews female in SEA — AIF angle + claim-mgmt is emotional labor), Bing Wen (WIS/CareShield adjacency).
+
+**Business model:** Success fee on claims paid (20–30%). Consumer pays nothing unless they win.
+**Moat:** Policy-parsing library + insurer integration map + behavioral payout data (what actually gets paid out vs denied).
+**TAM:** 100M+ SEA gig workers × ~$200–400/yr in unclaimed micro-insurance = $20–40B+ unclaimed pool.
+**Founder-market fit:** Strongest with insurance-industry or gig-worker operator experience. Defensibility: regulators will increasingly push insurers to cooperate as claim-rate gaps become politicised.
+
+**Risk:** Insurers will resist actively (they profit from the claim gap). Mitigation: start with insurer-friendly products (gig platform-mandated insurance where platforms want higher claim rates); consumer-protection regulatory framing as moat.
+
+---
+
+### 28. Working Capital — Invoice Factoring Agent for SEA SMEs
+
+**Tackles:** A3 (unequal AI outcomes for SMEs) + E3 (physical systems — supply chain)
+**For:** SEA SME owners waiting 60–90 days for payment from corporate buyers while paying their own suppliers upfront. Cashflow failure is the #1 SEA SME mortality cause (not product, not competition).
+
+**The insight.** Invoice factoring exists but is manual, expensive (3–5%/mo), and gatekept by relationships. US solutions (Pipe, Capchase) don't translate because they assume predictable SaaS revenue — SEA SMEs have lumpy cashflow. The novel move: an AI agent that analyzes your invoice book + buyer quality (public + history) + supplier payment terms → builds a credit case autonomously → matches to financiers → disburses in 48 hours.
+
+**AI pipeline:**
+1. Ingest — SME invoice book (Xero / QuickBooks / photos)
+2. Buyer profile — payment-history lookup (ACRA, regulatory filings, past on-time %)
+3. Risk model — invoice-level default probability
+4. Package — bundle eligible invoices into a financing tranche
+5. Match — to financier (bank / non-bank / P2P) with appetite for this risk profile
+6. Disburse — funds to SME account within 48 hours
+7. Collect — auto-collect on due date; handle disputes
+
+**Panel champions:** **James** (financial inclusion at scale + fintech — his lens), **Heng Xuan** (durable moat via data + financier network), Cheryl/Daryl/Malavika (SEA fintech), Desmond (SG SME), Joshua (BM clarity).
+
+**Business model:** 0.5–2% on financed invoice value (half of typical factoring fees).
+**Moat:** Risk model improves with every invoice (flywheel); two-sided financier network; buyer-quality data becomes proprietary.
+**TAM:** $100B+ SEA SME working capital gap (IFC / Bain estimates); 50M+ SMEs addressable.
+**Founder-market fit:** Strongest with fintech operator or trade-finance background. Signals "I know why Pipe doesn't work in SEA."
+
+**Risk:** Each SEA market has different invoice-financing rules. Mitigation: start in Singapore (MAS sandbox exists), then expand market-by-market. Don't promise pan-SEA day one.
+
+---
+
+### 29. SME Counsel — AI Lawyer for SEA SMEs
+
+**Tackles:** A3 (unequal AI outcomes) + E2 (governance / auditability)
+**For:** SEA SME owners who need legal docs (employment, supplier terms, partnership, leases, NDAs) but can't afford $300–800/hr lawyer rates. They either sign bad contracts, skip legal entirely, or download US templates they don't understand.
+
+**The insight.** US AI-legal players (Harvey, Ironclad) target big-firm lawyers — high ARPU, narrow market. The SEA opportunity is the opposite: tens of millions of SMEs who've *never had legal access*. The novel move: an AI lawyer that drafts SEA-jurisdiction-specific documents, reviews incoming contracts against local norms, gives first-line advice in Mandarin / Bahasa / Vietnamese, and produces a signed audit trail.
+
+**AI pipeline:**
+1. Intake — conversational interview in user's language
+2. Retrieve — jurisdiction-specific legal corpus (SG / MY / ID / VN / TH statutes + case law + standard forms)
+3. Draft — contract tailored to SME's specific situation
+4. Review incoming — parse contracts the SME receives, flag adversarial clauses vs local norms
+5. Negotiate — draft counter-proposal in the SME's voice
+6. Sign + store — e-sign integration with audit trail
+7. Dispute support — pull relevant clauses + applicable law when issues arise
+
+**Panel champions:** **Theresa (Antler)** — every Antler founder needs this + solo-founder-viable, **Desmond (ACE.SG)** — SG SME fit, Cheryl/Daryl/Malavika (SEA B2B SaaS), Nishith (multi-jurisdiction legal pipeline), James (inclusion).
+
+**Business model:** B2B SaaS ($40–120/mo) + per-doc fees for complex matters.
+**Moat:** Jurisdiction-specific legal corpus (expensive to curate); case-outcome data; local legal-system integrations. Geographic moat — US competitors can't clone easily.
+**TAM:** ~5M SEA SMEs currently skipping legal; $10B+ underserved legal-services gap.
+**Founder-market fit:** Strongest with SEA legal or SME operator background. Defensibility: breadth across SEA jurisdictions is the moat.
+
+**Risk:** "AI lawyer" has regulatory sensitivity (unauthorised-practice-of-law rules vary). Mitigation: frame as "legal document assistant," never "legal advice"; partner with licensed lawyers for complex matters; explicit scope limits.
+
+---
+
+### 30. AgenticAg — Smallholder Farmer AI Agent
+
+**Tackles:** E3 (AI for physical systems) + A3 (underserved) + scales to A5/B5 (AIF if framed for female farmers)
+**For:** 200M+ Indonesian / Vietnamese / Thai / Filipino smallholder farmers making daily crop, pricing, and financing decisions with almost no information, systematically exploited by middlemen who capture 30–70% of margin.
+
+**The insight.** Smallholder farmers are the largest underserved agent-addressable population on earth. Decisions daily (what to plant, when to sell, what price to accept) with no data, no benchmarks, no direct-buyer access. Middlemen capture most margin because they have information farmers don't. The novel move: a voice-native (Mandarin / Bahasa / Vietnamese / Thai / Tagalog) AI agent that gives smallholders agronomy, weather, pricing, direct-buyer matching, and input credit — all via WhatsApp, no app install.
+
+**AI pipeline:**
+1. Voice ingest — farmer's daily update in their language
+2. Agronomy advice — domain-specific (nutrient deficiency, pest pattern) grounded in regional crop data
+3. Weather forecast — localized, crop-relevant, actionable
+4. Market pricing — real-time nearby mandi / market prices
+5. Direct buyer match — connect to corporate buyer (Grab, Unilever, exporters), bypass middlemen
+6. Input credit — qualifying farmers get input financing backed by forward-sale contracts
+7. Weekly voice report in their language — what to do next week, what the market is doing, what's in their pocket
+
+**Panel champions:** **James** (sustainability + financial inclusion + scale — he will salivate), **Malavika (East Ventures, Indonesia)** — massive smallholder base, Cheryl/Daryl (SEA VC), Hester (women farmers skew majority in some SEA markets — AIF angle).
+
+**Business model:** Take-rate on financed transactions + input-sale margins + marketplace fees on direct-buyer matching.
+**Moat:** Ground-truth smallholder operational data (proprietary + hard to replicate) + buyer network + financier relationships + regional language coverage. Data-flywheel moat.
+**TAM:** 200M+ SEA smallholders; $200B+ annual SEA ag output; 30–70% middleman capture to redirect.
+**Founder-market fit:** Strongest with agritech or financial-inclusion operator experience. The story writes itself: "we fix the biggest economic injustice in SEA."
+
+**Risk:** Smallholders are tool-skeptical + low-connectivity. Mitigation: voice-first + WhatsApp-native (infrastructure they already use); distribution via agri-cooperatives; nail one country (Indonesia likely) before expanding.
+
+---
+
 ## Stacking map
 
 Ideas that share primitives and could merge if you want one big swing:
@@ -493,14 +938,22 @@ Ideas that share primitives and could merge if you want one big swing:
 - **Kasih Credit + MigrantMate** — both serve SEA's financially underserved. Kasih profiles you; MigrantMate *uses* your profile to manage your household. Together: "AI financial OS for the next 500M SEA consumers." James + Malavika + AIF possible.
 - **Envelope + Kasih Credit + MigrantMate** — the full SEA financial-inclusion trio. Category-creating, triple-VC-friendly. Could pitch as one holding-co play but likely too ambitious for hackathon week — pick one as wedge.
 - **ComplyAI + Agent Stethoscope** — both are "boring SaaS with durable moats that founders need." Theresa + Desmond + Joshua pure commercial stack; zero AIF but strong VC panel vote.
+- **PaperMate + Refund Hunter + Fine Print** — the full adulting OS. Everyone's paperwork + their refunds + their contracts. James + Nishith + Janet if women-framed. Concrete consumer pitch.
+- **Rehearse + Fair Share Agent** — emotional labor absorbed on both sides. Siti stops being the chaser AND stops dreading the "we need to talk" with her flatmate. Double-AIF Janet + Hester stack.
+- **Aftermath + Filial Proxy** — when Mdm Lim passes, the Filial Proxy becomes Aftermath; same infrastructure, life-transition continuum. Bing Wen + Wanting + Janet if framed around widowhood admin.
+- **Real Research + Numbers Honestly + Protocol Grader** — evidence-grounded decision support trio. Sandy + Wanting + Janet. "Honest AI" identity stack.
+- **Kasih Credit + Working Capital + Claims** — the SEA financial inclusion OS. Consumer alt-credit + SME cashflow + micro-insurance claiming. James + Heng Xuan + SEA VCs. Triple moat from three data pools that reinforce each other.
+- **Carbon Invoice + SME Counsel + ComplyAI** — SEA SME "regulatory OS." ESG reporting + legal docs + compliance filings. Theresa + Desmond + James + Heng Xuan. One SME, three revenue streams.
+- **AgenticAg + Hawker Inventory Agent + Quiet Clients** — SEA physical-economy voice-agent stack. Smallholder + hawker + SME-to-student bridge. Same primitive (voice-first multilingual agent with domain vocab), three user segments. Nishith + James + Malavika.
+- **Claims + MigrantMate + PaperMate** — household-admin absorption stack for the underserved. The OFW manages her family's insurance claims + household bills + government paperwork via one agent. James + Hester + Malavika.
 
 ---
 
 ## Coverage check
 
-Challenges covered: A1 (Receipts, Envelope), A2 (Authenticity Letter, LiveTrust), A3 (Brain Gigs, Hawker Agent, Kasih Credit, LiveTrust, MigrantMate), A4 (Filial Proxy), A5 (Remix Club), B1 (Brain Gigs), B2 (Brain Gigs, Kasih Credit), B3 (Quiet Clients, Portfolio Passport), B4 (Quiet Clients, ComplyAI), B5 (Portfolio Passport), C3 (Fair Share, MigrantMate), C4 (Fair Share), D1 (Next-Visit Briefing), D2 (Protocol Grader), D3 (Next-Visit Briefing), D4 (Filial Proxy, Next-Visit Briefing, MigrantMate), D5 (Predict-Then-See), D6 (Numbers Honestly), E1 (Agent Stethoscope, Envelope), E2 (Filial Proxy, Receipts, Agent Stethoscope, Envelope, ComplyAI), E3 (Hawker Inventory Agent), E4 (Predict-Then-See), E5 (Remix Club).
+Challenges covered: A1 (Receipts, Envelope, PaperMate), A2 (Authenticity Letter, LiveTrust, Real Research), A3 (Brain Gigs, Hawker Agent, Kasih Credit, LiveTrust, MigrantMate, PaperMate, Refund Hunter, Fine Print, Real Research, Carbon Invoice, Claims, Working Capital, SME Counsel, AgenticAg), A4 (Filial Proxy, Aftermath), A5 (Remix Club, Claims, AgenticAg via female-farmer framing), B1 (Brain Gigs), B2 (Brain Gigs, Kasih Credit, Claims), B3 (Quiet Clients, Portfolio Passport), B4 (Quiet Clients, ComplyAI), B5 (Portfolio Passport, Claims, AgenticAg via women's framing), C2 (Rehearse), C3 (Fair Share, MigrantMate), C4 (Fair Share, Rehearse, Aftermath), D1 (Next-Visit Briefing), D2 (Protocol Grader), D3 (Next-Visit Briefing), D4 (Filial Proxy, Next-Visit Briefing, MigrantMate, Aftermath), D5 (Predict-Then-See), D6 (Numbers Honestly), E1 (Agent Stethoscope, Envelope), E2 (Filial Proxy, Receipts, Agent Stethoscope, Envelope, ComplyAI, PaperMate, SME Counsel), E3 (Hawker Inventory Agent, Carbon Invoice, Working Capital, AgenticAg), E4 (Predict-Then-See, Fine Print, Rehearse, Real Research), E5 (Remix Club).
 
-**Intentionally skipped:** C1 (Priority collapse) and C2 (Decision fatigue) — `challenge-statements.md` flags these as weakest-advocate zones (no dedicated champion + crowded market). Enter only with a very sharp edge, not as default hackathon play.
+**Still intentionally skipped:** C1 (Priority collapse) — `challenge-statements.md` flags this as a weakest-advocate zone (no dedicated champion + crowded market). Enter only with a very sharp edge. C2 is now touched by Rehearse via the "hard decisions you're avoiding" frame.
 
 ---
 
